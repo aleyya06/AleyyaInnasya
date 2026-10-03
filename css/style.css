@@ -431,6 +431,18 @@ body {
   );
 }
 
+.project-card__thumb--pawfox {
+  background: linear-gradient(135deg, #f2f0ea, #e6e8e0);
+}
+
+.project-card__logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(26, 26, 26, 0.1);
+}
+
 .project-card__glyph {
   font-family: var(--serif);
   font-size: 1.6rem;
