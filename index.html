@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
 <body>
 
@@ -33,6 +33,13 @@
   <main>
     <!-- ===== Hero ===== -->
     <section class="hero" id="hero">
+      <div class="wind-layer" aria-hidden="true">
+        <span class="wind-drift wind-drift--1" data-parallax="0.2"><i></i></span>
+        <span class="wind-drift wind-drift--2" data-parallax="-0.12"><i></i></span>
+        <span class="wind-drift wind-drift--3" data-parallax="0.32"><i></i></span>
+        <svg class="wind-line wind-line--1" viewBox="0 0 220 60"><path d="M4 42 C 50 8, 90 56, 130 30 S 196 14, 216 34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 9" stroke-linecap="round"/></svg>
+        <svg class="wind-line wind-line--2" viewBox="0 0 220 60"><path d="M6 30 C 48 52, 96 12, 138 36 S 190 48, 214 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 9" stroke-linecap="round"/></svg>
+      </div>
       <div class="container hero__inner">
         <p class="hero__eyebrow reveal">Mathematics Student · Data Enthusiast · Surabaya</p>
         <h1 class="hero__title reveal">Aleyya Innasya<br />El Karima Wicaksono</h1>
@@ -74,12 +81,15 @@
 
     <!-- ===== Experience ===== -->
     <section class="section section--tinted" id="experience">
+      <div class="wind-layer" aria-hidden="true">
+        <span class="wind-drift wind-drift--2" data-parallax="0.14"><i></i></span>
+      </div>
       <div class="container">
         <p class="section__label reveal">02 — Experience</p>
         <h2 class="section__title reveal">Where I've contributed.</h2>
 
         <div class="timeline">
-          <article class="timeline__item reveal">
+          <article class="timeline__item reveal reveal--left">
             <div class="timeline__meta">
               <span class="timeline__period">Oct 2025 – Nov 2025</span>
               <h3 class="timeline__role">Event Staff</h3>
@@ -91,7 +101,7 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal">
+          <article class="timeline__item reveal reveal--left">
             <div class="timeline__meta">
               <span class="timeline__period">Sep 2025</span>
               <h3 class="timeline__role">Master of Ceremony</h3>
@@ -103,7 +113,7 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal">
+          <article class="timeline__item reveal reveal--left">
             <div class="timeline__meta">
               <span class="timeline__period">Jun 2025 – Aug 2025</span>
               <h3 class="timeline__role">Finance Staff</h3>
@@ -115,7 +125,7 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal">
+          <article class="timeline__item reveal reveal--left">
             <div class="timeline__meta">
               <span class="timeline__period">Oct 2023 – Nov 2023</span>
               <h3 class="timeline__role">Marketing</h3>
@@ -128,7 +138,7 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal">
+          <article class="timeline__item reveal reveal--left">
             <div class="timeline__meta">
               <span class="timeline__period">Feb 2023 – Mar 2023</span>
               <h3 class="timeline__role">Marketing</h3>
@@ -162,7 +172,7 @@
       <div class="container">
         <p class="section__label reveal">04 — Certifications &amp; Awards</p>
         <div class="two-col">
-          <div class="reveal">
+          <div class="reveal reveal--left">
             <h2 class="subsection__title">Certifications</h2>
             <ul class="card-list">
               <li class="card-list__item">
@@ -183,7 +193,7 @@
               </li>
             </ul>
           </div>
-          <div class="reveal">
+          <div class="reveal reveal--right">
             <h2 class="subsection__title">Awards</h2>
             <ul class="card-list">
               <li class="card-list__item">
@@ -202,12 +212,15 @@
 
     <!-- ===== Projects ===== -->
     <section class="section" id="projects">
+      <div class="wind-layer" aria-hidden="true">
+        <span class="wind-drift wind-drift--3" data-parallax="-0.16"><i></i></span>
+      </div>
       <div class="container">
         <p class="section__label reveal">05 — Projects</p>
         <h2 class="section__title reveal">Things I've built.</h2>
 
         <div class="projects__grid">
-          <article class="project-card reveal">
+          <article class="project-card reveal reveal--left">
             <div class="project-card__thumb project-card__thumb--snake" aria-hidden="true">
               <span class="project-card__glyph">▸ ▸ ▸</span>
             </div>
@@ -230,7 +243,7 @@
             </div>
           </article>
 
-          <article class="project-card project-card--soon reveal">
+          <article class="project-card project-card--soon reveal reveal--right">
             <div class="project-card__thumb project-card__thumb--soon" aria-hidden="true">
               <span class="project-card__glyph">~</span>
             </div>
@@ -255,7 +268,7 @@
       <div class="container">
         <p class="section__label reveal">06 — Skills</p>
         <div class="two-col">
-          <div class="reveal">
+          <div class="reveal reveal--left">
             <h2 class="subsection__title">Data &amp; Programming</h2>
             <ul class="skill-tags">
               <li>SQL</li>
@@ -273,7 +286,7 @@
               <li>Canva</li>
             </ul>
           </div>
-          <div class="reveal">
+          <div class="reveal reveal--right">
             <h2 class="subsection__title">Soft Skills</h2>
             <ul class="skill-tags">
               <li>Financial Record Keeping</li>
@@ -290,6 +303,9 @@
 
     <!-- ===== Contact ===== -->
     <section class="section contact" id="contact">
+      <div class="wind-layer" aria-hidden="true">
+        <span class="wind-drift wind-drift--1" data-parallax="0.18"><i></i></span>
+      </div>
       <div class="container contact__inner">
         <p class="section__label reveal">07 — Contact</p>
         <h2 class="contact__title reveal">Let's connect.</h2>
@@ -309,6 +325,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

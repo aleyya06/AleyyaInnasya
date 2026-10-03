@@ -29,3 +29,48 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+// Wind parallax: decorative layers drift at their own speed while scrolling,
+// and the hero gently fades and rises out of view.
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReduced) {
+  const driftEls = Array.from(document.querySelectorAll("[data-parallax]"));
+  const heroInner = document.querySelector(".hero__inner");
+  let ticking = false;
+
+  const applyParallax = () => {
+    ticking = false;
+    const vh = window.innerHeight;
+
+    driftEls.forEach((el) => {
+      const host = el.closest("section");
+      if (!host) return;
+      const rect = host.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > vh + 200) return; // offscreen
+
+      const speed = parseFloat(el.dataset.parallax) || 0;
+      const offset = (rect.top + rect.height / 2 - vh / 2) * speed * -1;
+      el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+    });
+
+    if (heroInner) {
+      const y = window.scrollY;
+      heroInner.style.opacity = Math.max(0, 1 - y / 620);
+      heroInner.style.transform = `translate3d(0, ${(y * -0.12).toFixed(1)}px, 0)`;
+    }
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(applyParallax);
+      }
+    },
+    { passive: true }
+  );
+
+  applyParallax();
+}
