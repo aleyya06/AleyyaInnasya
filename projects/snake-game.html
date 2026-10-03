@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game — Project Deck | Aleyya Innasya</title>
+  <meta name="description" content="Project presentation deck for Snake Game — a Java OOP desktop game by Aleyya Innasya." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .project-hero { padding: 130px 0 48px; }
+    .project-hero .container { max-width: 1080px; }
+    .project-hero__back {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-decoration: none;
+      margin-bottom: 26px;
+    }
+    .project-hero__back:hover { color: var(--ink); }
+    .project-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .project-hero__meta { color: var(--ink-soft); max-width: 720px; }
+    .deck {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+    .deck__frame {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(26, 26, 26, 0.06);
+    }
+    .deck__frame embed {
+      display: block;
+      width: 100%;
+      height: min(82vh, 900px);
+      border: 0;
+    }
+    .deck__fallback {
+      padding: 16px 4px 0;
+      font-size: 0.9rem;
+      color: var(--ink-faint);
+    }
+    .deck__fallback a { color: var(--ink); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__brand">Aleyya<span class="nav__dot">.</span></a>
+      <nav class="nav__links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact" class="nav__cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <a class="project-hero__back" href="../index.html#projects">← Back to all projects</a>
+        <h1 class="project-hero__title">Snake Game</h1>
+        <p class="project-hero__meta">
+          A desktop Snake game built as a team OOP project (with Fatkhul Barri).
+          The app is split into five classes — <em>SnakeMain</em> (entry point),
+          <em>MainMenuPanel</em> (main menu plus skin &amp; food customization),
+          <em>SnakePanel</em> (core game logic: movement, collisions, and score),
+          <em>GameOverPanel</em>, and <em>ImageLoader</em> (loads PNG/JPG/GIF
+          resources). Designed first with UML class diagrams. The full deck is
+          embedded below.
+        </p>
+      </div>
+    </section>
+
+    <section class="deck">
+      <div class="deck__frame">
+        <embed src="../assets/snake-game-presentation.pdf" type="application/pdf" />
+      </div>
+      <p class="deck__fallback">
+        Can't view the deck? <a href="../assets/snake-game-presentation.pdf" download>Download the PDF</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Aleyya Innasya El Karima Wicaksono</p>
+      <a href="../index.html">Back to home ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
