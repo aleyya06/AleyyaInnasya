@@ -30,6 +30,41 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Certificate lightbox: click a card to view the full certificate
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+if (lightbox) {
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll(".cert-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return; // let the Verify link behave normally
+      const img = card.querySelector("img");
+      if (img) openLightbox(img);
+    });
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.id === "lightboxClose") closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+  });
+}
+
 // Wind parallax: decorative layers drift at their own speed while scrolling,
 // and the hero gently fades and rises out of view.
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
