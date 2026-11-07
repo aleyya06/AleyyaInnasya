@@ -2,18 +2,28 @@
 const toggle = document.getElementById("navToggle");
 const links = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-  const open = links.classList.toggle("is-open");
-  toggle.setAttribute("aria-expanded", String(open));
-});
+if (toggle && links) {
+  toggle.addEventListener("click", () => {
+    const open = links.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
 
-// Close the mobile menu after picking a section
-links.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => {
-    links.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
-  })
-);
+  // Close the mobile menu after picking a section
+  links.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    })
+  );
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && links.classList.contains("is-open")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 // Fade-in sections as they enter the viewport
 const observer = new IntersectionObserver(
@@ -65,8 +75,8 @@ if (lightbox) {
   });
 }
 
-// Wind parallax: decorative layers drift at their own speed while scrolling,
-// and the hero gently fades and rises out of view.
+// Grid parallax: the decorative wireframe drifts slightly while scrolling,
+// and the hero copy gently fades as it leaves the viewport.
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!prefersReduced) {
