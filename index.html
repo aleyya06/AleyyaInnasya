@@ -5,69 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aleyya Innasya — Mathematics Student &amp; Data Enthusiast</title>
   <meta name="description" content="Portfolio of Aleyya Innasya El Karima Wicaksono — Mathematics undergraduate at ITS with a strong interest in data processing and analysis." />
+  <meta name="theme-color" content="#FAF2EB" />
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,100,0;1,9..144,300..600,100,1&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=13" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__ring"></span></div>
+
   <!-- ===== Navigation ===== -->
-  <header class="nav">
+  <header class="nav" data-nav>
     <div class="container nav__inner">
       <a href="#hero" class="nav__brand">Aleyya<span class="nav__dot">.</span></a>
-      <nav class="nav__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="nav__cta">Contact</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#about" style="--i:0">About</a>
+        <a href="#experience" style="--i:1">Experience</a>
+        <a href="#education" style="--i:2">Education</a>
+        <a href="#projects" style="--i:3">Projects</a>
+        <a href="#skills" style="--i:4">Skills</a>
+        <a href="#contact" class="nav__cta" style="--i:5">Contact</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav__toggle-label">Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span></span>
       </button>
     </div>
+    <span class="nav__progress" aria-hidden="true"></span>
   </header>
 
   <main id="main">
     <!-- ===== Hero ===== -->
-    <section class="hero" id="hero">
-      <div class="wire wire--hero" aria-hidden="true" data-parallax="0.06">
-        <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" fill="none" stroke="currentColor" stroke-width="1"><line x1="-2420" y1="700" x2="800" y2="-80"/><line x1="-2190" y1="700" x2="800" y2="-80"/><line x1="-1960" y1="700" x2="800" y2="-80"/><line x1="-1730" y1="700" x2="800" y2="-80"/><line x1="-1500" y1="700" x2="800" y2="-80"/><line x1="-1270" y1="700" x2="800" y2="-80"/><line x1="-1040" y1="700" x2="800" y2="-80"/><line x1="-810" y1="700" x2="800" y2="-80"/><line x1="-580" y1="700" x2="800" y2="-80"/><line x1="-350" y1="700" x2="800" y2="-80"/><line x1="-120" y1="700" x2="800" y2="-80"/><line x1="110" y1="700" x2="800" y2="-80"/><line x1="340" y1="700" x2="800" y2="-80"/><line x1="570" y1="700" x2="800" y2="-80"/><line x1="800" y1="700" x2="800" y2="-80"/><line x1="1030" y1="700" x2="800" y2="-80"/><line x1="1260" y1="700" x2="800" y2="-80"/><line x1="1490" y1="700" x2="800" y2="-80"/><line x1="1720" y1="700" x2="800" y2="-80"/><line x1="1950" y1="700" x2="800" y2="-80"/><line x1="2180" y1="700" x2="800" y2="-80"/><line x1="2410" y1="700" x2="800" y2="-80"/><line x1="2640" y1="700" x2="800" y2="-80"/><line x1="2870" y1="700" x2="800" y2="-80"/><line x1="3100" y1="700" x2="800" y2="-80"/><line x1="3330" y1="700" x2="800" y2="-80"/><line x1="3560" y1="700" x2="800" y2="-80"/><line x1="3790" y1="700" x2="800" y2="-80"/><line x1="4020" y1="700" x2="800" y2="-80"/><line x1="0" y1="700" x2="1600" y2="700"/><line x1="0" y1="606" x2="1600" y2="606"/><line x1="0" y1="533" x2="1600" y2="533"/><line x1="0" y1="476" x2="1600" y2="476"/><line x1="0" y1="432" x2="1600" y2="432"/><line x1="0" y1="397" x2="1600" y2="397"/><line x1="0" y1="370" x2="1600" y2="370"/><line x1="0" y1="349" x2="1600" y2="349"/><line x1="0" y1="333" x2="1600" y2="333"/><line x1="0" y1="320" x2="1600" y2="320"/><line x1="0" y1="310" x2="1600" y2="310"/><line x1="0" y1="302" x2="1600" y2="302"/><line x1="0" y1="296" x2="1600" y2="296"/><line x1="0" y1="291" x2="1600" y2="291"/><line x1="0" y1="288" x2="1600" y2="288"/><line x1="0" y1="285" x2="1600" y2="285"/></svg>
+    <section class="hero" id="hero" data-tone="paper">
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__figure">
+          <svg class="rose rose--draw rose--hero" data-rose="5/4" data-float="0.5" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
+          <p class="hero__equation">r = cos(5θ/4)</p>
+        </div>
+        <svg class="rose rose--draw rose--bud rose--bud-a" data-rose="3" data-float="1.6" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
+        <svg class="rose rose--draw rose--bud rose--bud-b" data-rose="2" data-float="-1.2" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
+        <svg class="rose rose--draw rose--bud rose--bud-c" data-rose="7" data-float="0.9" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
       </div>
       <div class="container hero__inner">
-        <p class="hero__eyebrow reveal">Mathematics Student · Data Enthusiast · Surabaya</p>
-        <h1 class="hero__title reveal">Aleyya Innasya<br />El Karima Wicaksono</h1>
-        <p class="hero__tagline reveal">
+        <p class="hero__eyebrow" data-intro>Mathematics Student · Data Enthusiast · Surabaya</p>
+        <h1 class="hero__title" data-split="chars" data-on-load><span class="hero__line">Aleyya Innasya</span><br /><span class="hero__line hero__line--italic">El Karima Wicaksono</span></h1>
+        <p class="hero__tagline" data-intro>
           Mathematics undergraduate at ITS, learning to make data accurate,
           organized, and useful.
         </p>
-        <div class="hero__actions reveal">
-          <a href="#experience" class="btn btn--primary">View Experience</a>
-          <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+        <div class="hero__actions" data-intro>
+          <a href="#experience" class="btn btn--primary" data-magnetic><span class="btn__label">View Experience</span></a>
+          <a href="#contact" class="btn btn--ghost" data-magnetic><span class="btn__label">Get in Touch</span></a>
         </div>
-        <div class="hero__links reveal">
-          <a href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
+        <div class="hero__links" data-intro>
+          <a class="link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
         </div>
       </div>
     </section>
 
     <!-- ===== About ===== -->
-    <section class="section" id="about">
-      <div class="container">
-        <p class="section__label reveal">01 — About</p>
-          <div class="about__body about__body--wide reveal">
-            <p>
+    <section class="section about" id="about" data-tone="paper">
+      <svg class="rose rose--drift about__rose" data-rose="3" data-parallax="-0.08" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
+      <div class="container about__grid">
+        <h2 class="section__label" data-reveal><span class="section__num">01</span> — About</h2>
+          <div class="about__body about__body--wide">
+            <p class="about__lead" data-split="words">
               I'm a Mathematics student at Sepuluh Nopember Institute of Technology
               (ITS), class of 2024, with a strong interest in data processing and
               analysis. I enjoy making sense of numbers: organizing them, checking
               them, and turning them into something people can act on.
             </p>
-            <p>
+            <p data-reveal>
               Right now, I'm building my skills in SQL, Python, and data analysis
               one project at a time, backed by my Dicoding certifications in Data
               Science and SQL. I'm open to opportunities where I can learn and
@@ -78,13 +91,18 @@
     </section>
 
     <!-- ===== Experience ===== -->
-    <section class="section section--tinted" id="experience">
+    <section class="section chapter chapter--night experience" id="experience" data-tone="night" data-under="paper" data-chapter>
       <div class="container">
-        <p class="section__label reveal">02 — Experience</p>
-        <h2 class="section__title reveal">Where I've contributed.</h2>
+        <div class="section__head">
+          <p class="section__label" data-reveal><span class="section__num">02</span> — Experience</p>
+          <h2 class="section__title" data-split="words">Where I've <em>contributed.</em></h2>
+        </div>
 
-        <div class="timeline">
-          <article class="timeline__item reveal reveal--left">
+        <div class="timeline" data-timeline>
+          <span class="timeline__track" aria-hidden="true"><span class="timeline__fill"></span></span>
+
+          <article class="timeline__item" data-reveal>
+            <span class="timeline__marker" aria-hidden="true"></span>
             <div class="timeline__meta">
               <span class="timeline__period">Oct 2025 – Nov 2025</span>
               <h3 class="timeline__role">Event Staff</h3>
@@ -96,7 +114,8 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal reveal--left">
+          <article class="timeline__item" data-reveal>
+            <span class="timeline__marker" aria-hidden="true"></span>
             <div class="timeline__meta">
               <span class="timeline__period">Sep 2025</span>
               <h3 class="timeline__role">Master of Ceremony</h3>
@@ -108,7 +127,8 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal reveal--left">
+          <article class="timeline__item" data-reveal>
+            <span class="timeline__marker" aria-hidden="true"></span>
             <div class="timeline__meta">
               <span class="timeline__period">Jun 2025 – Aug 2025</span>
               <h3 class="timeline__role">Finance Staff</h3>
@@ -120,7 +140,8 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal reveal--left">
+          <article class="timeline__item" data-reveal>
+            <span class="timeline__marker" aria-hidden="true"></span>
             <div class="timeline__meta">
               <span class="timeline__period">Oct 2023 – Nov 2023</span>
               <h3 class="timeline__role">Marketing</h3>
@@ -133,7 +154,8 @@
             </ul>
           </article>
 
-          <article class="timeline__item reveal reveal--left">
+          <article class="timeline__item" data-reveal>
+            <span class="timeline__marker" aria-hidden="true"></span>
             <div class="timeline__meta">
               <span class="timeline__period">Feb 2023 – Mar 2023</span>
               <h3 class="timeline__role">Marketing</h3>
@@ -149,10 +171,11 @@
     </section>
 
     <!-- ===== Education ===== -->
-    <section class="section" id="education">
+    <section class="section chapter education" id="education" data-tone="paper" data-under="night" data-chapter>
+      <svg class="rose rose--drift education__rose" data-rose="6/5" data-parallax="0.06" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
       <div class="container">
-        <p class="section__label reveal">03 — Education</p>
-        <div class="edu reveal">
+        <h2 class="section__label" data-reveal><span class="section__num">03</span> — Education</h2>
+        <div class="edu" data-reveal="left">
           <div>
             <h3 class="edu__school">Sepuluh Nopember Institute of Technology (ITS)</h3>
             <p class="edu__degree">Bachelor of Mathematics</p>
@@ -163,80 +186,91 @@
     </section>
 
     <!-- ===== Certifications & Awards ===== -->
-    <section class="section section--tinted" id="achievements">
+    <section class="section achievements" id="achievements" data-tone="blush">
       <div class="container">
-        <p class="section__label reveal">04 — Certifications &amp; Awards</p>
+        <p class="section__label" data-reveal><span class="section__num">04</span> — Certifications &amp; Awards</p>
 
-        <h2 class="subsection__title reveal">Certifications</h2>
-        <div class="cert-grid">
-          <figure class="cert-card reveal">
-            <div class="cert-card__frame">
+        <h2 class="subsection__title" data-split="words">Certifications</h2>
+        <div class="cert-grid" data-stagger>
+          <figure class="cert-card" data-reveal data-tilt>
+            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
               <img src="assets/certificates/cert-data-science.jpg" alt="Dicoding certificate — Belajar Dasar Data Science, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </div>
+            </button>
             <figcaption class="cert-card__body">
               <span class="cert-card__name">Belajar Dasar Data Science</span>
               <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify" href="https://www.dicoding.com/certificates/JMZVOK6LQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
+              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/JMZVOK6LQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
             </figcaption>
           </figure>
 
-          <figure class="cert-card reveal">
-            <div class="cert-card__frame">
+          <figure class="cert-card" data-reveal data-tilt>
+            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
               <img src="assets/certificates/cert-sql.jpg" alt="Dicoding certificate — Belajar Dasar Structured Query Language (SQL), awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </div>
+            </button>
             <figcaption class="cert-card__body">
               <span class="cert-card__name">Belajar Dasar Structured Query Language (SQL)</span>
               <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify" href="https://www.dicoding.com/certificates/JMZVOK6JQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
+              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/JMZVOK6JQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
             </figcaption>
           </figure>
 
-          <figure class="cert-card reveal">
-            <div class="cert-card__frame">
+          <figure class="cert-card" data-reveal data-tilt>
+            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
               <img src="assets/certificates/cert-kiro.jpg" alt="Dicoding certificate — Spec-Driven Development dengan Kiro, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </div>
+            </button>
             <figcaption class="cert-card__body">
               <span class="cert-card__name">Spec-Driven Development dengan Kiro</span>
               <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify" href="https://www.dicoding.com/certificates/EYX4QW48WPDL" target="_blank" rel="noopener">Verify certificate ↗</a>
+              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/EYX4QW48WPDL" target="_blank" rel="noopener">Verify certificate ↗</a>
             </figcaption>
           </figure>
 
-          <figure class="cert-card reveal">
-            <div class="cert-card__frame">
+          <figure class="cert-card" data-reveal data-tilt>
+            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
               <img src="assets/certificates/cert-financial-literacy.jpg" alt="Dicoding certificate — Introduction to Financial Literacy, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </div>
+            </button>
             <figcaption class="cert-card__body">
               <span class="cert-card__name">Introduction to Financial Literacy</span>
               <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify" href="https://www.dicoding.com/certificates/6RPN7LJE5X2M" target="_blank" rel="noopener">Verify certificate ↗</a>
+              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/6RPN7LJE5X2M" target="_blank" rel="noopener">Verify certificate ↗</a>
             </figcaption>
           </figure>
         </div>
 
-        <h2 class="subsection__title reveal">Awards</h2>
-        <div class="awards-grid reveal">
-          <div class="card-list__item">
-            <span class="card-list__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
-            <span class="card-list__meta">2023</span>
+        <h2 class="subsection__title" data-split="words">Awards</h2>
+        <div class="awards" data-stagger>
+          <div class="award" data-reveal>
+            <span class="award__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
+            <span class="award__meta">2023</span>
           </div>
-          <div class="card-list__item">
-            <span class="card-list__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
-            <span class="card-list__meta">2022</span>
+          <div class="award" data-reveal>
+            <span class="award__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
+            <span class="award__meta">2022</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Projects ===== -->
-    <section class="section" id="projects">
+    <section class="section projects" id="projects" data-tone="paper">
+      <svg class="rose rose--drift projects__rose" data-rose="5/3" data-parallax="-0.06" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
       <div class="container">
-        <p class="section__label reveal">05 — Projects</p>
-        <h2 class="section__title reveal">Things I've built.</h2>
+        <div class="section__head">
+          <p class="section__label" data-reveal><span class="section__num">05</span> — Projects</p>
+          <h2 class="section__title" data-split="words">Things I've <em>built.</em></h2>
+        </div>
 
         <div class="projects__grid">
-          <article class="project-card reveal reveal--left">
+          <article class="project-card project-card--feature" data-reveal data-tilt>
             <div class="project-card__thumb project-card__thumb--snake" aria-hidden="true">
+              <div class="snake">
+                <span class="snake__food"></span>
+                <span class="snake__seg" style="--i:0"></span>
+                <span class="snake__seg" style="--i:1"></span>
+                <span class="snake__seg" style="--i:2"></span>
+                <span class="snake__seg" style="--i:3"></span>
+                <span class="snake__seg" style="--i:4"></span>
+              </div>
               <span class="project-card__glyph">▸ ▸ ▸</span>
             </div>
             <div class="project-card__body">
@@ -252,13 +286,13 @@
                 <em>ImageLoader</em> (loads PNG/JPG/GIF resources). Designed first with
                 UML class diagrams, with keyboard controls for every state of the game.
               </p>
-              <a class="project-card__link" href="projects/snake-game.html">
+              <a class="project-card__link link" href="projects/snake-game.html">
                 View project deck ↗
               </a>
             </div>
           </article>
 
-          <article class="project-card reveal reveal--right">
+          <article class="project-card project-card--pawfox" data-reveal data-tilt>
             <div class="project-card__thumb project-card__thumb--pawfox">
               <img src="assets/pawfox-logo.png" alt="PawFox GO logo" class="project-card__logo" loading="lazy" />
             </div>
@@ -274,13 +308,13 @@
                 parcels from the warehouse to Indonesia, and check their
                 invoices — complete with buyer reviews.
               </p>
-              <a class="project-card__link" href="https://pawfox.web.id" target="_blank" rel="noopener">
+              <a class="project-card__link link" href="https://pawfox.web.id" target="_blank" rel="noopener">
                 Visit PawFox GO ↗
               </a>
             </div>
           </article>
 
-          <article class="project-card project-card--soon reveal reveal--right">
+          <article class="project-card project-card--soon" data-reveal>
             <div class="project-card__thumb project-card__thumb--soon" aria-hidden="true">
               <span class="project-card__glyph">~</span>
             </div>
@@ -301,50 +335,48 @@
     </section>
 
     <!-- ===== Skills ===== -->
-    <section class="section section--tinted" id="skills">
+    <section class="section chapter chapter--plum skills" id="skills" data-tone="plum" data-under="paper" data-chapter>
       <div class="container">
-        <p class="section__label reveal">06 — Skills</p>
-        <div class="reveal reveal--left">
-          <h2 class="subsection__title">Data &amp; Programming</h2>
-          <ul class="skill-tags">
-            <li>SQL</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>Data Analysis</li>
+        <p class="section__label" data-reveal><span class="section__num">06</span> — Skills</p>
+        <div class="skills__body">
+          <h2 class="subsection__title" data-split="words">Data &amp; Programming</h2>
+          <ul class="skill-tags" data-stagger>
+            <li data-reveal>SQL</li>
+            <li data-reveal>Python</li>
+            <li data-reveal>Java</li>
+            <li data-reveal>Data Analysis</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
-    <section class="section contact" id="contact">
-      <div class="wire wire--contact" aria-hidden="true" data-parallax="-0.04">
-        <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" fill="none" stroke="currentColor" stroke-width="1"><line x1="-2420" y1="700" x2="800" y2="-80"/><line x1="-2190" y1="700" x2="800" y2="-80"/><line x1="-1960" y1="700" x2="800" y2="-80"/><line x1="-1730" y1="700" x2="800" y2="-80"/><line x1="-1500" y1="700" x2="800" y2="-80"/><line x1="-1270" y1="700" x2="800" y2="-80"/><line x1="-1040" y1="700" x2="800" y2="-80"/><line x1="-810" y1="700" x2="800" y2="-80"/><line x1="-580" y1="700" x2="800" y2="-80"/><line x1="-350" y1="700" x2="800" y2="-80"/><line x1="-120" y1="700" x2="800" y2="-80"/><line x1="110" y1="700" x2="800" y2="-80"/><line x1="340" y1="700" x2="800" y2="-80"/><line x1="570" y1="700" x2="800" y2="-80"/><line x1="800" y1="700" x2="800" y2="-80"/><line x1="1030" y1="700" x2="800" y2="-80"/><line x1="1260" y1="700" x2="800" y2="-80"/><line x1="1490" y1="700" x2="800" y2="-80"/><line x1="1720" y1="700" x2="800" y2="-80"/><line x1="1950" y1="700" x2="800" y2="-80"/><line x1="2180" y1="700" x2="800" y2="-80"/><line x1="2410" y1="700" x2="800" y2="-80"/><line x1="2640" y1="700" x2="800" y2="-80"/><line x1="2870" y1="700" x2="800" y2="-80"/><line x1="3100" y1="700" x2="800" y2="-80"/><line x1="3330" y1="700" x2="800" y2="-80"/><line x1="3560" y1="700" x2="800" y2="-80"/><line x1="3790" y1="700" x2="800" y2="-80"/><line x1="4020" y1="700" x2="800" y2="-80"/><line x1="0" y1="700" x2="1600" y2="700"/><line x1="0" y1="606" x2="1600" y2="606"/><line x1="0" y1="533" x2="1600" y2="533"/><line x1="0" y1="476" x2="1600" y2="476"/><line x1="0" y1="432" x2="1600" y2="432"/><line x1="0" y1="397" x2="1600" y2="397"/><line x1="0" y1="370" x2="1600" y2="370"/><line x1="0" y1="349" x2="1600" y2="349"/><line x1="0" y1="333" x2="1600" y2="333"/><line x1="0" y1="320" x2="1600" y2="320"/><line x1="0" y1="310" x2="1600" y2="310"/><line x1="0" y1="302" x2="1600" y2="302"/><line x1="0" y1="296" x2="1600" y2="296"/><line x1="0" y1="291" x2="1600" y2="291"/><line x1="0" y1="288" x2="1600" y2="288"/><line x1="0" y1="285" x2="1600" y2="285"/></svg>
-      </div>
+    <section class="section chapter contact" id="contact" data-tone="night" data-under="plum" data-chapter>
+      <svg class="rose rose--contact" data-rose="5/3" data-float="0.7" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
       <div class="container contact__inner">
-        <p class="section__label reveal">07 — Contact</p>
-        <h2 class="contact__title reveal">Let's connect.</h2>
-        <div class="contact__actions reveal">
-          <a class="btn btn--primary" href="mailto:aleyyainnasya@gmail.com">Email Me</a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <p class="section__label" data-reveal><span class="section__num">07</span> — Contact</p>
+        <h2 class="contact__title" data-split="chars">Let's <em>connect.</em></h2>
+        <div class="contact__actions" data-reveal>
+          <a class="btn btn--primary" href="mailto:aleyyainnasya@gmail.com" data-magnetic><span class="btn__label">Email Me</span></a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener" data-magnetic><span class="btn__label">LinkedIn ↗</span></a>
         </div>
-        <p class="contact__meta reveal">Surabaya, Indonesia</p>
+        <p class="contact__meta" data-reveal>Surabaya, Indonesia</p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-tone="night">
     <div class="container footer__inner">
       <p>© 2026 Aleyya Innasya El Karima Wicaksono</p>
-      <a href="#hero">Back to top ↑</a>
+      <a class="link footer__top" href="#hero">Back to top <span class="footer__arrow" aria-hidden="true">↑</span></a>
     </div>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Certificate preview">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close preview">&times;</button>
     <img class="lightbox__img" id="lightboxImg" src="" alt="" />
   </div>
 
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=13"></script>
 </body>
 </html>

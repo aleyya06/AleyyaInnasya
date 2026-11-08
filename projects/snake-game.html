@@ -5,38 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snake Game — Project Deck | Aleyya Innasya</title>
   <meta name="description" content="Project presentation deck for Snake Game — a Java OOP desktop game by Aleyya Innasya." />
+  <meta name="theme-color" content="#FAF2EB" />
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=7" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,100,0;1,9..144,300..600,100,1&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=13" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav">
+  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__ring"></span></div>
+
+  <header class="nav" data-nav>
     <div class="container nav__inner">
       <a href="../index.html" class="nav__brand">Aleyya<span class="nav__dot">.</span></a>
-      <nav class="nav__links" id="navLinks">
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#education">Education</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#contact" class="nav__cta">Contact</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="../index.html#about" style="--i:0">About</a>
+        <a href="../index.html#experience" style="--i:1">Experience</a>
+        <a href="../index.html#education" style="--i:2">Education</a>
+        <a href="../index.html#projects" style="--i:3">Projects</a>
+        <a href="../index.html#skills" style="--i:4">Skills</a>
+        <a href="../index.html#contact" class="nav__cta" style="--i:5">Contact</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav__toggle-label">Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span></span>
       </button>
     </div>
+    <span class="nav__progress" aria-hidden="true"></span>
   </header>
 
   <main id="main">
-    <section class="project-hero">
+    <section class="project-hero" data-tone="paper">
+      <svg class="rose rose--draw project-hero__rose" data-rose="5/4" data-float="0.4" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
       <div class="container">
-        <a class="project-hero__back" href="../index.html#projects">← Back to all projects</a>
-        <h1 class="project-hero__title">Snake Game</h1>
-        <p class="project-hero__meta">
+        <a class="project-hero__back" href="../index.html#projects" data-intro><span class="project-hero__arrow" aria-hidden="true">←</span> Back to all projects</a>
+        <h1 class="project-hero__title" data-split="chars" data-on-load>Snake Game</h1>
+        <p class="project-hero__meta" data-intro>
           A desktop Snake game built as a team OOP project (with Fatkhul Barri).
           The app is split into five classes — <em>SnakeMain</em> (entry point),
           <em>MainMenuPanel</em> (main menu plus skin &amp; food customization),
@@ -48,23 +55,25 @@
       </div>
     </section>
 
-    <section class="deck">
-      <div class="deck__frame">
-        <embed src="../assets/snake-game-presentation.pdf" type="application/pdf" />
+    <section class="deck" data-tone="paper">
+      <div class="container">
+        <div class="deck__frame" data-reveal>
+          <embed src="../assets/snake-game-presentation.pdf" type="application/pdf" />
+        </div>
+        <p class="deck__fallback">
+          Can't view the deck? <a class="link" href="../assets/snake-game-presentation.pdf" download>Download the PDF</a>
+        </p>
       </div>
-      <p class="deck__fallback">
-        Can't view the deck? <a href="../assets/snake-game-presentation.pdf" download>Download the PDF</a>
-      </p>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-tone="night">
     <div class="container footer__inner">
       <p>© 2026 Aleyya Innasya El Karima Wicaksono</p>
-      <a href="../index.html">Back to home ↑</a>
+      <a class="link footer__top" href="../index.html">Back to home <span class="footer__arrow" aria-hidden="true">↑</span></a>
     </div>
   </footer>
 
-  <script src="../js/main.js?v=7"></script>
+  <script src="../js/main.js?v=13"></script>
 </body>
 </html>
