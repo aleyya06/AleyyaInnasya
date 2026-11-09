@@ -894,6 +894,12 @@ em { font-style: italic; }
 .project-card__desc em { color: var(--night); }
 .project-card__link { align-self: flex-start; margin-top: 22px; font-size: 0.95rem; }
 
+/* Hanzee has two versions, so its card carries two links side by side */
+.project-card__links { display: flex; flex-wrap: wrap; gap: 4px 28px; margin-top: 22px; }
+.project-card__links .project-card__link { margin-top: 0; }
+.project-card__thumb--hanzee { height: 240px; }
+.project-card__logo--app { width: 150px; height: 150px; border-radius: 36px; }
+
 @media (hover: hover) {
   .project-card:not(.project-card--soon):hover {
     /* Lifted: the card under the pointer is the one you can open */
@@ -1092,7 +1098,8 @@ em { font-style: italic; }
 @media (min-width: 640px) {
   .cert-grid { grid-template-columns: 1fr 1fr; }
   .projects__grid { grid-template-columns: 1fr 1fr; }
-  .project-card--feature { grid-column: 1 / -1; }
+  .project-card--feature,
+  .project-card--wide { grid-column: 1 / -1; }
   .hero__figure { right: -24vw; width: 80vw; top: 6%; }
   .rose--bud-a { display: block; }
 }
@@ -1195,6 +1202,17 @@ em { font-style: italic; }
   .projects__grid { grid-template-columns: repeat(12, 1fr); gap: 28px; }
   .project-card--feature { grid-column: 1 / span 7; grid-row: span 2; }
   .project-card--feature .project-card__thumb { height: 340px; }
+  .project-card--wide { flex-direction: row; }
+  .project-card--wide .project-card__thumb {
+    flex: 0 0 38%;
+    height: auto;
+    min-height: 300px;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+  .project-card--wide .project-card__body { justify-content: center; padding: 40px 44px; }
+  .project-card--wide .project-card__desc { flex: 0 1 auto; max-width: 60ch; }
+  .project-card__logo--app { width: 180px; height: 180px; border-radius: 42px; }
   .project-card--pawfox,
   .project-card--soon { grid-column: span 5; }
   .project-card__body { padding: 30px 30px 34px; }
