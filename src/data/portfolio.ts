@@ -78,7 +78,7 @@ export const profile: Profile = {
   firstLine: "Aleyya Innasya",
   secondLine: "El Karima Wicaksono",
   fullName: "Aleyya Innasya El Karima Wicaksono",
-  tagline: "Mathematics undergraduate at ITS, learning to make data accurate, organized, and useful.",
+  tagline: "Mathematics undergraduate at ITS building responsive web and mobile applications while exploring data analysis.",
   location: "Surabaya, Indonesia",
   email: "aleyyainnasya@gmail.com",
   linkedin: "https://www.linkedin.com/in/aleyyainnasya/",
@@ -96,9 +96,9 @@ export const nav: NavItem[] = [
 export const about = {
   headline: "Learning to make data accurate, organized, and useful.",
   lead:
-    "I'm a Mathematics student at Sepuluh Nopember Institute of Technology (ITS), class of 2024, with a strong interest in data processing and analysis. I enjoy making sense of numbers: organizing them, checking them, and turning them into something people can act on.",
+    "I'm a Mathematics undergraduate at ITS (class of 2024) focused on web and mobile application development. I combine structured analytical thinking with hands-on engineering to build responsive web platforms and cross platform mobile apps from interactive learning tools to end-to-end order tracking systems.",
   body:
-    "Right now, I'm building my skills in SQL, Python, and data analysis one project at a time, backed by my Dicoding certifications in Data Science and SQL. I'm open to opportunities where I can learn and contribute.",
+    "Alongside building products with Flutter, modern web technologies, and object-oriented design, I'm also actively learning data analysis and processing with Python and SQL. I'm open to collaborative product builds where I can build, learn, and contribute.",
 };
 
 export const education: Education = {
