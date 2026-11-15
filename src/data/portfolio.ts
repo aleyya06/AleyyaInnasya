@@ -96,9 +96,9 @@ export const nav: NavItem[] = [
 export const about = {
   headline: "Learning to make data accurate, organized, and useful.",
   lead:
-    "I'm a Mathematics undergraduate at ITS (class of 2024) focused on web and mobile application development. I combine structured analytical thinking with hands-on engineering to build responsive web platforms and cross platform mobile apps from interactive learning tools to end-to-end order tracking systems.",
+    "I'm a Mathematics undergraduate at ITS (class of 2024) focused on web and mobile application development. I combine structured analytical thinking with hands on engineering to build responsive web platforms and cross platform mobile apps from interactive learning tools to end to end order tracking systems.",
   body:
-    "Alongside building products with Flutter, modern web technologies, and object-oriented design, I'm also actively learning data analysis and processing with Python and SQL. I'm open to collaborative product builds where I can build, learn, and contribute.",
+    "Alongside building products with Flutter, modern web technologies, and object oriented design, I'm also actively learning data analysis and processing with Python and SQL. I'm open to collaborative product builds where I can build, learn, and contribute.",
 };
 
 export const education: Education = {
