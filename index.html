@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aleyya Innasya — Mathematics Student &amp; Data Enthusiast</title>
   <meta name="description" content="Portfolio of Aleyya Innasya El Karima Wicaksono — Mathematics undergraduate at ITS with a strong interest in data processing and analysis." />
-  <meta name="theme-color" content="#FBF6F3" />
+  <meta name="theme-color" content="#F5EFEA" />
   <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=23" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=32" />
   <script type="importmap">
     { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" } }
   </script>
@@ -19,7 +19,7 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- 3D campus, fixed behind the page -->
+  <!-- 3D campus, fixed behind the opening flight -->
   <div class="stage" aria-hidden="true">
     <canvas id="scene" class="stage__canvas"></canvas>
     <span class="stage__tag" id="siteTag">Site</span>
@@ -53,7 +53,7 @@
         <div class="sheet__body">
           <h1 class="hero__title" id="heroTitle">
             <span class="hero__line">Aleyya Innasya</span>
-            <span class="hero__line hero__line--italic">El Karima Wicaksono</span>
+            <span class="hero__line hero__line--rose">El Karima Wicaksono</span>
           </h1>
           <p class="hero__lede">Mathematics undergraduate at ITS, learning to make data accurate, organized, and useful.</p>
           <p class="hero__links">
@@ -75,78 +75,118 @@
       </article>
     </section>
 
-    <!-- ===== Projects ===== -->
-    <section class="panel panel--wide" id="projects" aria-labelledby="projectsTitle">
-      <div class="sheet sheet--panel" data-reveal>
-        <div class="sheet__meta"><span>Sheet 01 · Projects</span><span>01 / 05</span></div>
-        <div class="sheet__body">
-          <div class="panel__head">
-            <h2 class="panel__title" id="projectsTitle">Things I've <em>built.</em></h2>
-            <div class="filters" role="group" aria-label="Filter projects">
-              <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter" type="button" data-filter="apps" aria-pressed="false">Mobile &amp; Web Apps</button>
-              <button class="filter" type="button" data-filter="oop" aria-pressed="false">OOP &amp; Systems</button>
+    <!-- Solid editorial page that slides over the 3D scene after the landing -->
+    <div class="content" id="content">
+
+      <!-- [01] About & Education -->
+      <section class="section" id="about" aria-labelledby="aboutTitle">
+        <div class="section__inner">
+          <p class="kicker" data-reveal><span>[01] About &amp; Education</span></p>
+          <div class="section__head" data-reveal>
+            <h2 class="section__title" id="aboutTitle">Learning to make data accurate, organized, and useful.</h2>
+            <a class="section__action link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">View LinkedIn profile ↗</a>
+          </div>
+
+          <div class="about" data-reveal>
+            <div class="about__bio">
+              <p class="about__lead">
+                I'm a Mathematics student at Sepuluh Nopember Institute of Technology
+                (ITS), class of 2024, with a strong interest in data processing and
+                analysis. I enjoy making sense of numbers: organizing them, checking
+                them, and turning them into something people can act on.
+              </p>
+              <p>
+                Right now, I'm building my skills in SQL, Python, and data analysis
+                one project at a time, backed by my Dicoding certifications in Data
+                Science and SQL. I'm open to opportunities where I can learn and
+                contribute.
+              </p>
+            </div>
+
+            <div class="about__side" id="education">
+              <div class="edu">
+                <span class="badge badge--rose">2024 – Present</span>
+                <h3 class="edu__school">Institut Teknologi Sepuluh Nopember (ITS)</h3>
+                <p class="edu__degree">Bachelor of Mathematics</p>
+                <p class="edu__role">Undergraduate Mathematics Student, focused on data organization, mathematical modeling, and software craftsmanship.</p>
+              </div>
+
+              <div class="awards">
+                <h3 class="minor-title">Awards</h3>
+                <div class="award">
+                  <span class="award__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
+                  <span class="award__year">2023</span>
+                </div>
+                <div class="award">
+                  <span class="award__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
+                  <span class="award__year">2022</span>
+                </div>
+              </div>
             </div>
           </div>
-          <p class="visually-hidden" id="filterStatus" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- [02] Selected Projects -->
+      <section class="section" id="projects" aria-labelledby="projectsTitle">
+        <div class="section__inner">
+          <p class="kicker" data-reveal><span>[02] Selected Projects</span></p>
+          <div class="section__head" data-reveal>
+            <h2 class="section__title" id="projectsTitle">Things I've built.</h2>
+            <a class="section__action link" href="https://github.com/aleyya06" target="_blank" rel="noopener">See my GitHub ↗</a>
+          </div>
 
           <div class="projects">
-            <article class="project project--wide" data-cat="apps" data-tilt>
-              <div class="project__preview project__preview--phone" aria-hidden="true">
-                <div class="phone">
+            <article class="card" data-reveal>
+              <div class="card__visual card__visual--phone">
+                <span class="badge badge--sheet">Sheet P-01</span>
+                <span class="badge badge--plum">Flutter · App</span>
+                <div class="phone" aria-hidden="true">
                   <span class="phone__notch"></span>
                   <img src="assets/hanzee-icon.png" alt="" class="phone__icon" width="320" height="320" loading="lazy" />
                   <span class="phone__name">Hanzee</span>
                 </div>
               </div>
-              <div class="project__body">
-                <div class="project__head">
-                  <span class="project__index">01</span>
-                  <h3 class="project__title">Hanzee</h3>
-                  <span class="project__tag">Flutter · Web &amp; Android</span>
-                </div>
-                <p class="project__desc">
-                  A Flutter app that teaches Mandarin to Indonesian and English-speaking
-                  beginners, from the first nǐ hǎo to HSK 5. Features a Hanzi Writing Lab
-                  that checks strokes, spaced-repetition flashcards, grammar cards,
-                  listening and pronunciation practice, and a garden that grows as you
-                  learn with Bao the panda and Kopi the bear.
-                </p>
-                <p class="project__links">
-                  <a class="link" href="https://aleyya06.github.io/Hanzee/" target="_blank" rel="noopener">Try the web version ↗</a>
-                  <a class="link" href="https://github.com/aleyya06/Hanzee/releases/latest/download/app-release.apk">Download for Android (APK, 67 MB)</a>
-                </p>
-              </div>
+              <h3 class="card__title">Hanzee</h3>
+              <p class="card__desc">
+                A Flutter app that teaches Mandarin to Indonesian and English-speaking
+                beginners, from the first nǐ hǎo to HSK 5. Features a Hanzi Writing Lab
+                that checks strokes, spaced-repetition flashcards, grammar cards,
+                listening and pronunciation practice, and a garden that grows as you
+                learn with Bao the panda and Kopi the bear.
+              </p>
+              <p class="card__links">
+                <a class="link" href="https://aleyya06.github.io/Hanzee/" target="_blank" rel="noopener">Try web version ↗</a>
+                <a class="link" href="https://github.com/aleyya06/Hanzee/releases/latest/download/app-release.apk">Download for Android (APK, 67 MB)</a>
+              </p>
             </article>
 
-            <article class="project" data-cat="apps" data-tilt>
-              <div class="project__preview project__preview--browser" aria-hidden="true">
-                <div class="browser">
+            <article class="card" data-reveal>
+              <div class="card__visual card__visual--browser">
+                <span class="badge badge--sheet">Sheet P-02</span>
+                <span class="badge badge--plum">Web App · Live</span>
+                <div class="browser" aria-hidden="true">
                   <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">pawfox.web.id</span></span>
                   <img src="assets/pawfox-logo.png" alt="" class="browser__logo" loading="lazy" />
                 </div>
               </div>
-              <div class="project__body">
-                <div class="project__head">
-                  <span class="project__index">02</span>
-                  <h3 class="project__title">PawFox GO</h3>
-                  <span class="project__tag">Web App · Live</span>
-                </div>
-                <p class="project__desc">
-                  A web platform for personal-managed K-pop group orders from Thailand,
-                  South Korea, China, and Japan. Buyers can browse ongoing batches per
-                  country, convert GO rates to rupiah, track parcels from the warehouse
-                  to Indonesia, and check their invoices—complete with buyer reviews.
-                </p>
-                <p class="project__links">
-                  <a class="link" href="https://pawfox.web.id" target="_blank" rel="noopener">Visit PawFox GO ↗</a>
-                </p>
-              </div>
+              <h3 class="card__title">PawFox GO</h3>
+              <p class="card__desc">
+                A web platform for personal-managed K-pop group orders from Thailand,
+                South Korea, China, and Japan. Buyers can browse ongoing batches per
+                country, convert GO rates to rupiah, track parcels from the warehouse
+                to Indonesia, and check their invoices—complete with buyer reviews.
+              </p>
+              <p class="card__links">
+                <a class="link" href="https://pawfox.web.id" target="_blank" rel="noopener">Visit PawFox GO ↗</a>
+              </p>
             </article>
 
-            <article class="project project--snake" data-cat="oop" data-tilt>
-              <div class="project__preview project__preview--snake" aria-hidden="true">
-                <div class="snake">
+            <article class="card card--snake" data-reveal>
+              <div class="card__visual card__visual--snake">
+                <span class="badge badge--sheet">Sheet P-03</span>
+                <span class="badge badge--plum">Java · OOP</span>
+                <div class="snake" aria-hidden="true">
                   <span class="snake__food"></span>
                   <span class="snake__seg" style="--i:0"></span>
                   <span class="snake__seg" style="--i:1"></span>
@@ -155,98 +195,57 @@
                   <span class="snake__seg" style="--i:4"></span>
                 </div>
               </div>
-              <div class="project__body">
-                <div class="project__head">
-                  <span class="project__index">03</span>
-                  <h3 class="project__title">Snake Game</h3>
-                  <span class="project__tag">Java · OOP</span>
-                </div>
-                <p class="project__desc">
-                  A desktop Snake game built as a team OOP project, split into five classes
-                  (<em>SnakeMain</em>, <em>MainMenuPanel</em>, <em>SnakePanel</em>,
-                  <em>GameOverPanel</em>, <em>ImageLoader</em>). Designed first with UML
-                  class diagrams, featuring keyboard controls and custom skin &amp; food
-                  customization.
-                </p>
-                <p class="project__links">
-                  <a class="link" href="projects/snake-game.html">View project deck ↗</a>
-                </p>
-              </div>
+              <h3 class="card__title">Snake Game</h3>
+              <p class="card__desc">
+                A desktop Snake game built as a team OOP project, split into five classes
+                (<em>SnakeMain</em>, <em>MainMenuPanel</em>, <em>SnakePanel</em>,
+                <em>GameOverPanel</em>, <em>ImageLoader</em>). Designed first with UML
+                class diagrams, featuring keyboard controls and custom skin &amp; food
+                customization.
+              </p>
+              <p class="card__links">
+                <a class="link" href="projects/snake-game.html">View project deck ↗</a>
+              </p>
             </article>
 
-            <article class="project project--soon" data-cat="soon">
-              <div class="project__preview project__preview--soon" aria-hidden="true"><span>~</span></div>
-              <div class="project__body">
-                <div class="project__head">
-                  <span class="project__index">04</span>
-                  <h3 class="project__title">Data Analysis Projects</h3>
-                  <span class="project__tag">SQL · Python</span>
-                </div>
-                <p class="project__desc">
-                  A space reserved for my upcoming projects. As I continue
-                  learning SQL, Python, and data analysis — building on my
-                  Dicoding certifications — new work will be showcased here.
-                </p>
+            <article class="card card--soon" data-reveal>
+              <div class="card__visual card__visual--soon">
+                <span class="badge badge--sheet">Sheet P-04</span>
+                <span class="badge badge--outline">SQL · Python</span>
+                <span class="card__tilde" aria-hidden="true">~</span>
               </div>
+              <h3 class="card__title">Data Analysis Projects</h3>
+              <p class="card__desc">
+                A space reserved for my upcoming projects. As I continue
+                learning SQL, Python, and data analysis — building on my
+                Dicoding certifications — new work will be showcased here.
+              </p>
             </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== About & Education ===== -->
-    <section class="panel panel--left" id="about" aria-labelledby="aboutTitle">
-      <div class="sheet sheet--panel" data-reveal>
-        <div class="sheet__meta"><span>Sheet 02 · About &amp; Education</span><span>02 / 05</span></div>
-        <div class="sheet__body split">
-          <div class="split__col">
-            <span class="split__index">01</span>
-            <h2 class="panel__title panel__title--sm" id="aboutTitle">About</h2>
-            <p class="about__lead">
-              I'm a Mathematics student at Sepuluh Nopember Institute of Technology
-              (ITS), class of 2024, with a strong interest in data processing and
-              analysis. I enjoy making sense of numbers: organizing them, checking
-              them, and turning them into something people can act on.
-            </p>
-            <p class="about__more">
-              Right now, I'm building my skills in SQL, Python, and data analysis
-              one project at a time, backed by my Dicoding certifications in Data
-              Science and SQL. I'm open to opportunities where I can learn and
-              contribute.
-            </p>
+      <!-- [03] Experience -->
+      <section class="section" id="experience" aria-labelledby="experienceTitle">
+        <div class="section__inner">
+          <p class="kicker" data-reveal><span>[03] Experience</span></p>
+          <div class="section__head" data-reveal>
+            <h2 class="section__title" id="experienceTitle">Where I've contributed.</h2>
           </div>
-          <div class="split__col" id="education">
-            <span class="split__index">02</span>
-            <h2 class="panel__title panel__title--sm">Education</h2>
-            <h3 class="edu__school">Institut Teknologi Sepuluh Nopember (ITS)</h3>
-            <p class="edu__degree">Bachelor of Mathematics</p>
-            <p class="edu__role">Undergraduate Mathematics Student, focused on data organization, mathematical modeling, and software craftsmanship.</p>
-            <p class="edu__period">2024 – Present</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== Experience & Skills ===== -->
-    <section class="panel panel--right" id="experience" aria-labelledby="experienceTitle">
-      <div class="sheet sheet--panel" data-reveal>
-        <div class="sheet__meta"><span>Sheet 03 · Experience &amp; Skills</span><span>03 / 05</span></div>
-        <div class="sheet__body">
-          <h2 class="panel__title" id="experienceTitle">Where I've <em>contributed.</em></h2>
-
-          <div class="accordion">
-            <div class="acc">
-              <h3 class="acc__head">
-                <button class="acc__btn" type="button" id="exp-1-btn" aria-expanded="true" aria-controls="exp-1">
-                  <span class="acc__period">Oct 2025 – Nov 2025</span>
-                  <span class="acc__title">Event Staff</span>
-                  <span class="acc__org">ITS Chess Tournament 2025</span>
-                  <span class="acc__icon" aria-hidden="true"></span>
+          <div class="rows" data-reveal>
+            <div class="row">
+              <h3 class="row__head">
+                <button class="row__btn" type="button" id="exp-1-btn" aria-expanded="true" aria-controls="exp-1">
+                  <span class="row__period">Oct 2025 – Nov 2025</span>
+                  <span class="row__title">Event Staff</span>
+                  <span class="row__org">ITS Chess Tournament 2025</span>
+                  <span class="row__icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc__panel is-open" id="exp-1" role="region" aria-labelledby="exp-1-btn">
-                <div class="acc__inner">
-                  <ul class="acc__points">
+              <div class="row__panel is-open" id="exp-1" role="region" aria-labelledby="exp-1-btn">
+                <div class="row__inner">
+                  <ul class="row__points">
                     <li>Coordinated event logistics and rundown, serving as Master of Ceremony for participants.</li>
                     <li>Collaborated with the organizing committee to ensure smooth event execution.</li>
                   </ul>
@@ -254,18 +253,18 @@
               </div>
             </div>
 
-            <div class="acc">
-              <h3 class="acc__head">
-                <button class="acc__btn" type="button" id="exp-2-btn" aria-expanded="false" aria-controls="exp-2">
-                  <span class="acc__period">Sep 2025</span>
-                  <span class="acc__title">Master of Ceremony</span>
-                  <span class="acc__org">Open House, Mathematics Department ITS</span>
-                  <span class="acc__icon" aria-hidden="true"></span>
+            <div class="row">
+              <h3 class="row__head">
+                <button class="row__btn" type="button" id="exp-2-btn" aria-expanded="false" aria-controls="exp-2">
+                  <span class="row__period">Sep 2025</span>
+                  <span class="row__title">Master of Ceremony</span>
+                  <span class="row__org">Open House, Mathematics Department ITS</span>
+                  <span class="row__icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc__panel" id="exp-2" role="region" aria-labelledby="exp-2-btn">
-                <div class="acc__inner">
-                  <ul class="acc__points">
+              <div class="row__panel" id="exp-2" role="region" aria-labelledby="exp-2-btn">
+                <div class="row__inner">
+                  <ul class="row__points">
                     <li>Hosted and facilitated the department's open house event.</li>
                     <li>Coordinated with the event committee to ensure a smooth program flow.</li>
                   </ul>
@@ -273,18 +272,18 @@
               </div>
             </div>
 
-            <div class="acc">
-              <h3 class="acc__head">
-                <button class="acc__btn" type="button" id="exp-3-btn" aria-expanded="false" aria-controls="exp-3">
-                  <span class="acc__period">Jun 2025 – Aug 2025</span>
-                  <span class="acc__title">Finance Staff</span>
-                  <span class="acc__org">Aksi Nirwasita 6.0 — FSAD ITS</span>
-                  <span class="acc__icon" aria-hidden="true"></span>
+            <div class="row">
+              <h3 class="row__head">
+                <button class="row__btn" type="button" id="exp-3-btn" aria-expanded="false" aria-controls="exp-3">
+                  <span class="row__period">Jun 2025 – Aug 2025</span>
+                  <span class="row__title">Finance Staff</span>
+                  <span class="row__org">Aksi Nirwasita 6.0 — FSAD ITS</span>
+                  <span class="row__icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc__panel" id="exp-3" role="region" aria-labelledby="exp-3-btn">
-                <div class="acc__inner">
-                  <ul class="acc__points">
+              <div class="row__panel" id="exp-3" role="region" aria-labelledby="exp-3-btn">
+                <div class="row__inner">
+                  <ul class="row__points">
                     <li>Managed and organized financial data systematically using spreadsheets to ensure accuracy and accessibility.</li>
                     <li>Maintained high attention to detail in verifying records and generating accurate reports.</li>
                   </ul>
@@ -292,18 +291,18 @@
               </div>
             </div>
 
-            <div class="acc">
-              <h3 class="acc__head">
-                <button class="acc__btn" type="button" id="exp-4-btn" aria-expanded="false" aria-controls="exp-4">
-                  <span class="acc__period">Oct 2023 – Nov 2023</span>
-                  <span class="acc__title">Marketing</span>
-                  <span class="acc__org">Cendolino — Car Free Day Surabaya</span>
-                  <span class="acc__icon" aria-hidden="true"></span>
+            <div class="row">
+              <h3 class="row__head">
+                <button class="row__btn" type="button" id="exp-4-btn" aria-expanded="false" aria-controls="exp-4">
+                  <span class="row__period">Oct 2023 – Nov 2023</span>
+                  <span class="row__title">Marketing</span>
+                  <span class="row__org">Cendolino — Car Free Day Surabaya</span>
+                  <span class="row__icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc__panel" id="exp-4" role="region" aria-labelledby="exp-4-btn">
-                <div class="acc__inner">
-                  <ul class="acc__points">
+              <div class="row__panel" id="exp-4" role="region" aria-labelledby="exp-4-btn">
+                <div class="row__inner">
+                  <ul class="row__points">
                     <li>Interacted directly with customers and handled sales at Car Free Day.</li>
                     <li>Recorded daily sales figures and designed visual promo materials using Canva.</li>
                     <li>Reached sales targets through good customer service and deep product knowledge.</li>
@@ -312,18 +311,18 @@
               </div>
             </div>
 
-            <div class="acc">
-              <h3 class="acc__head">
-                <button class="acc__btn" type="button" id="exp-5-btn" aria-expanded="false" aria-controls="exp-5">
-                  <span class="acc__period">Feb 2023 – Mar 2023</span>
-                  <span class="acc__title">Marketing</span>
-                  <span class="acc__org">Browcup — SMA Muhammadiyah 2 Surabaya</span>
-                  <span class="acc__icon" aria-hidden="true"></span>
+            <div class="row">
+              <h3 class="row__head">
+                <button class="row__btn" type="button" id="exp-5-btn" aria-expanded="false" aria-controls="exp-5">
+                  <span class="row__period">Feb 2023 – Mar 2023</span>
+                  <span class="row__title">Marketing</span>
+                  <span class="row__org">Browcup — SMA Muhammadiyah 2 Surabaya</span>
+                  <span class="row__icon" aria-hidden="true"></span>
                 </button>
               </h3>
-              <div class="acc__panel" id="exp-5" role="region" aria-labelledby="exp-5-btn">
-                <div class="acc__inner">
-                  <ul class="acc__points">
+              <div class="row__panel" id="exp-5" role="region" aria-labelledby="exp-5-btn">
+                <div class="row__inner">
+                  <ul class="row__points">
                     <li>Recorded daily and weekly sales and produced complete sales reports.</li>
                     <li>Designed promo materials using Canva and contributed to boosting chocolate brownie sales through effective marketing strategies.</li>
                   </ul>
@@ -331,80 +330,50 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="skills" id="skills">
-            <h2 class="panel__title panel__title--sm">Skills</h2>
-            <div class="accordion">
-              <div class="acc">
-                <h3 class="acc__head">
-                  <button class="acc__btn acc__btn--skill" type="button" id="sk-1-btn" aria-expanded="true" aria-controls="sk-1">
-                    <span class="acc__title">Data &amp; Mathematical Modeling</span>
-                    <span class="acc__icon" aria-hidden="true"></span>
-                  </button>
-                </h3>
-                <div class="acc__panel is-open" id="sk-1" role="region" aria-labelledby="sk-1-btn">
-                  <div class="acc__inner">
-                    <ul class="tags">
-                      <li>Data Analysis</li>
-                      <li>Mathematical Modeling</li>
-                      <li>SQL</li>
-                      <li>Python</li>
-                      <li>Spreadsheets</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+      <!-- [04] Skills & Certifications -->
+      <section class="section" id="skills" aria-labelledby="skillsTitle">
+        <div class="section__inner">
+          <p class="kicker" data-reveal><span>[04] Skills &amp; Certifications</span></p>
+          <div class="section__head" data-reveal>
+            <h2 class="section__title" id="skillsTitle">Data &amp; Programming</h2>
+          </div>
 
-              <div class="acc">
-                <h3 class="acc__head">
-                  <button class="acc__btn acc__btn--skill" type="button" id="sk-2-btn" aria-expanded="false" aria-controls="sk-2">
-                    <span class="acc__title">Web &amp; Mobile Development</span>
-                    <span class="acc__icon" aria-hidden="true"></span>
-                  </button>
-                </h3>
-                <div class="acc__panel" id="sk-2" role="region" aria-labelledby="sk-2-btn">
-                  <div class="acc__inner">
-                    <ul class="tags">
-                      <li>Flutter</li>
-                      <li>React</li>
-                      <li>Java</li>
-                      <li>Python</li>
-                      <li>SQL</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="acc">
-                <h3 class="acc__head">
-                  <button class="acc__btn acc__btn--skill" type="button" id="sk-3-btn" aria-expanded="false" aria-controls="sk-3">
-                    <span class="acc__title">UI/Visual Design</span>
-                    <span class="acc__icon" aria-hidden="true"></span>
-                  </button>
-                </h3>
-                <div class="acc__panel" id="sk-3" role="region" aria-labelledby="sk-3-btn">
-                  <div class="acc__inner">
-                    <ul class="tags">
-                      <li>UI Design</li>
-                      <li>Visual Design</li>
-                      <li>Canva</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="skillrows" data-reveal>
+            <div class="skillrow">
+              <h3 class="skillrow__name">Data &amp; Mathematical Modeling</h3>
+              <ul class="pills-list">
+                <li>Data Analysis</li>
+                <li>Mathematical Modeling</li>
+                <li>SQL</li>
+                <li>Python</li>
+                <li>Spreadsheets</li>
+              </ul>
+            </div>
+            <div class="skillrow">
+              <h3 class="skillrow__name">Web &amp; Mobile Development</h3>
+              <ul class="pills-list">
+                <li>Flutter</li>
+                <li>React</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+            <div class="skillrow">
+              <h3 class="skillrow__name">UI/Visual Design</h3>
+              <ul class="pills-list">
+                <li>UI Design</li>
+                <li>Visual Design</li>
+                <li>Canva</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== Certifications & Awards ===== -->
-    <section class="panel panel--wide" id="achievements" aria-labelledby="certTitle">
-      <div class="sheet sheet--panel" data-reveal>
-        <div class="sheet__meta"><span>Sheet 04 · Certifications &amp; Awards</span><span>04 / 05</span></div>
-        <div class="sheet__body">
-          <h2 class="panel__title panel__title--sm" id="certTitle">Certifications</h2>
-          <div class="certs">
+          <h3 class="minor-title" id="achievements">Certifications</h3>
+          <div class="certs" data-reveal>
             <figure class="cert">
               <button class="cert__frame" type="button" aria-haspopup="dialog">
                 <img src="assets/certificates/cert-data-science.jpg" alt="Dicoding certificate — Belajar Dasar Data Science, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
@@ -449,29 +418,19 @@
               </figcaption>
             </figure>
           </div>
-
-          <h2 class="panel__title panel__title--sm">Awards</h2>
-          <div class="awards">
-            <div class="award">
-              <span class="award__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
-              <span class="award__year">2023</span>
-            </div>
-            <div class="award">
-              <span class="award__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
-              <span class="award__year">2022</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== Contact ===== -->
-    <section class="panel panel--left" id="contact" aria-labelledby="contactTitle">
-      <div class="sheet sheet--panel" data-reveal>
-        <div class="sheet__meta"><span>Sheet 05 · Contact</span><span>05 / 05</span></div>
-        <div class="sheet__body">
-          <h2 class="panel__title" id="contactTitle">Let's <em>connect.</em></h2>
-          <form class="inquiry" id="inquiry" novalidate>
+      <!-- [05] Contact -->
+      <section class="section section--plum" id="contact" aria-labelledby="contactTitle">
+        <div class="section__inner">
+          <p class="kicker" data-reveal><span>[05] Contact</span></p>
+          <div class="section__head" data-reveal>
+            <h2 class="section__title" id="contactTitle">Let's connect.</h2>
+            <a class="section__action link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
+          </div>
+
+          <form class="inquiry" id="inquiry" novalidate data-reveal>
             <div class="field">
               <label for="f-name">Name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required />
@@ -492,18 +451,20 @@
               <p class="inquiry__note" id="inquiryNote" role="status">Opens your email app with the message ready to send.</p>
             </div>
           </form>
+
           <p class="contact__links">
             <a class="link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
             <span>Surabaya, Indonesia</span>
           </p>
+
+          <footer class="footer">
+            <span>© 2026 aleyya.my.id · Aleyya Innasya El Karima Wicaksono</span>
+            <a class="link" href="#hero">Back to top ↑</a>
+          </footer>
         </div>
-        <footer class="sheet__foot footer">
-          <span>© 2026 aleyya.my.id · Aleyya Innasya El Karima Wicaksono</span>
-          <a class="link" href="#hero">Back to top ↑</a>
-        </footer>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Certificate preview">
@@ -511,7 +472,7 @@
     <img class="lightbox__img" id="lightboxImg" src="" alt="" />
   </div>
 
-  <script src="js/main.js?v=20" defer></script>
-  <script type="module" src="js/scene.js?v=23"></script>
+  <script src="js/main.js?v=30" defer></script>
+  <script type="module" src="js/scene.js?v=30"></script>
 </body>
 </html>

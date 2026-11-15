@@ -477,11 +477,17 @@ function init() {
   }
 
   const smooth = targetProgress();
+  const content = document.getElementById("content");
   let last = performance.now();
   let first = true;
   const frame = (now) => {
     const dt = Math.min((now - last) / 1000, 0.05);
     last = now;
+    // Once the solid page covers the whole canvas there is nothing to see, so skip the work.
+    if (!first && content && content.getBoundingClientRect().top <= 0) {
+      requestAnimationFrame(frame);
+      return;
+    }
     const target = targetProgress();
     const k = 1 - Math.exp(-dt * 4.5);
     smooth.descent += (target.descent - smooth.descent) * k;

@@ -56,8 +56,8 @@ if (links && "IntersectionObserver" in window) {
     }),
     { rootMargin: "-48% 0px -48% 0px" }
   );
-  // Education and Skills sit inside larger sheets, so they are watched on their own.
-  document.querySelectorAll("main section[id], #education, #skills").forEach((el) => spy.observe(el));
+  // Education sits inside the About section, so it is watched on its own.
+  document.querySelectorAll("main section[id], #education").forEach((el) => spy.observe(el));
 }
 
 // Hero sheet: fully visible for the first quarter of the descent, gone by about two thirds
@@ -81,33 +81,8 @@ if (flight && heroSheet) {
   update();
 }
 
-// Project filters
-const filterButtons = document.querySelectorAll("[data-filter]");
-const projectCards = document.querySelectorAll(".project");
-const filterStatus = document.getElementById("filterStatus");
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const f = btn.dataset.filter;
-    filterButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-    let shown = 0;
-    projectCards.forEach((card) => {
-      const show = f === "all" || card.dataset.cat === f;
-      const wasHidden = card.hidden;
-      card.hidden = !show;
-      if (show) {
-        shown++;
-        if (wasHidden && motionOK()) {
-          card.classList.add("is-entering");
-          requestAnimationFrame(() => requestAnimationFrame(() => card.classList.remove("is-entering")));
-        }
-      }
-    });
-    if (filterStatus) filterStatus.textContent = `Showing ${shown} ${shown === 1 ? "project" : "projects"}`;
-  });
-});
-
-// Accordions
-document.querySelectorAll(".acc__btn").forEach((btn) => {
+// Experience rows open and close
+document.querySelectorAll(".row__btn").forEach((btn) => {
   const panel = document.getElementById(btn.getAttribute("aria-controls"));
   if (!panel) return;
   btn.addEventListener("click", () => {
@@ -116,23 +91,6 @@ document.querySelectorAll(".acc__btn").forEach((btn) => {
     panel.classList.toggle("is-open", open);
   });
 });
-
-// Project cards lean toward the pointer
-if (finePointer.matches && motionOK()) {
-  document.querySelectorAll("[data-tilt]").forEach((card) => {
-    card.addEventListener("pointermove", (e) => {
-      const r = card.getBoundingClientRect();
-      card.classList.add("is-tilting");
-      card.style.setProperty("--ry", `${(((e.clientX - r.left) / r.width - 0.5) * 5).toFixed(2)}deg`);
-      card.style.setProperty("--rx", `${(((e.clientY - r.top) / r.height - 0.5) * -5).toFixed(2)}deg`);
-    });
-    card.addEventListener("pointerleave", () => {
-      card.classList.remove("is-tilting");
-      card.style.removeProperty("--rx");
-      card.style.removeProperty("--ry");
-    });
-  });
-}
 
 // Touch screens have no hover, so the snake takes one lap when its card comes into view.
 const snake = document.querySelector(".snake");
