@@ -5,405 +5,513 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aleyya Innasya — Mathematics Student &amp; Data Enthusiast</title>
   <meta name="description" content="Portfolio of Aleyya Innasya El Karima Wicaksono — Mathematics undergraduate at ITS with a strong interest in data processing and analysis." />
-  <meta name="theme-color" content="#FAF2EB" />
+  <meta name="theme-color" content="#FBF6F3" />
   <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,100,0;1,9..144,300..600,100,1&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=14" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=23" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" } }
+  </script>
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__ring"></span></div>
+  <!-- 3D campus, fixed behind the page -->
+  <div class="stage" aria-hidden="true">
+    <canvas id="scene" class="stage__canvas"></canvas>
+    <span class="stage__tag" id="siteTag">Site</span>
+  </div>
 
-  <!-- ===== Navigation ===== -->
-  <header class="nav" data-nav>
-    <div class="container nav__inner">
-      <a href="#hero" class="nav__brand">Aleyya<span class="nav__dot">.</span></a>
-      <nav class="nav__links" id="navLinks" aria-label="Sections">
-        <a href="#about" style="--i:0">About</a>
-        <a href="#experience" style="--i:1">Experience</a>
-        <a href="#education" style="--i:2">Education</a>
-        <a href="#projects" style="--i:3">Projects</a>
-        <a href="#skills" style="--i:4">Skills</a>
-        <a href="#contact" class="nav__cta" style="--i:5">Contact</a>
-      </nav>
-      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
-        <span class="nav__toggle-label">Menu</span>
-        <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span></span>
-      </button>
-    </div>
-    <span class="nav__progress" aria-hidden="true"></span>
+  <header class="pills" data-nav>
+    <a class="pill pill--brand" href="#hero">
+      <svg class="pill__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.50 12.00L22.30 12.90L21.72 13.71L20.78 14.35L19.56 14.75L18.12 14.85L16.55 14.62L14.94 14.06L13.40 13.17L12.00 12.00L10.83 10.60L9.94 9.06L9.38 7.45L9.15 5.88L9.25 4.44L9.65 3.22L10.29 2.28L11.10 1.70L12.00 1.50L12.90 1.70L13.71 2.28L14.35 3.22L14.75 4.44L14.85 5.88L14.62 7.45L14.06 9.06L13.17 10.60L12.00 12.00L10.60 13.17L9.06 14.06L7.45 14.62L5.88 14.85L4.44 14.75L3.22 14.35L2.28 13.71L1.70 12.90L1.50 12.00L1.70 11.10L2.28 10.29L3.22 9.65L4.44 9.25L5.88 9.15L7.45 9.38L9.06 9.94L10.60 10.83L12.00 12.00L13.17 13.40L14.06 14.94L14.62 16.55L14.85 18.12L14.75 19.56L14.35 20.78L13.71 21.72L12.90 22.30L12.00 22.50L11.10 22.30L10.29 21.72L9.65 20.78L9.25 19.56L9.15 18.12L9.37 16.55L9.94 14.94L10.83 13.40L12.00 12.00L13.40 10.83L14.94 9.94L16.55 9.37L18.12 9.15L19.56 9.25L20.78 9.65L21.72 10.29L22.30 11.10Z" /></svg>
+      <span class="pill__name">Aleyya.</span>
+      <span class="pill__meta">Mathematics · Data · Surabaya</span>
+    </a>
+    <nav class="pill pill--nav" id="navLinks" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+    </nav>
+    <button class="pill pill--menu" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <a class="pill pill--cta" href="#contact">Get in touch <span class="pill__arrow" aria-hidden="true">→</span></a>
   </header>
 
   <main id="main">
-    <!-- ===== Hero ===== -->
-    <section class="hero" id="hero" data-tone="paper">
-      <div class="hero__art" aria-hidden="true">
-        <div class="hero__figure">
-          <svg class="rose rose--draw rose--hero" data-rose="5/4" data-float="0.5" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
-          <p class="hero__equation">r = cos(5θ/4)</p>
+    <!-- Flight: the tall opening stretch where the camera descends onto the site -->
+    <section class="flight" id="hero" aria-labelledby="heroTitle">
+      <article class="sheet sheet--hero" data-hero>
+        <div class="sheet__meta">
+          <span>Sheet 00 · ITS Surabaya · <span class="math">r = cos(5θ/4)</span></span>
+          <span class="sheet__site">• Site</span>
         </div>
-        <svg class="rose rose--draw rose--bud rose--bud-a" data-rose="3" data-float="1.6" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
-        <svg class="rose rose--draw rose--bud rose--bud-b" data-rose="2" data-float="-1.2" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
-        <svg class="rose rose--draw rose--bud rose--bud-c" data-rose="7" data-float="0.9" viewBox="-1.05 -1.05 2.1 2.1" focusable="false"></svg>
-      </div>
-      <div class="container hero__inner">
-        <p class="hero__eyebrow" data-intro>Mathematics Student · Data Enthusiast · Surabaya</p>
-        <h1 class="hero__title" data-split="chars" data-on-load><span class="hero__line">Aleyya Innasya</span><br /><span class="hero__line hero__line--italic">El Karima Wicaksono</span></h1>
-        <p class="hero__tagline" data-intro>
-          Mathematics undergraduate at ITS, learning to make data accurate,
-          organized, and useful.
-        </p>
-        <div class="hero__actions" data-intro>
-          <a href="#experience" class="btn btn--primary" data-magnetic><span class="btn__label">View Experience</span></a>
-          <a href="#contact" class="btn btn--ghost" data-magnetic><span class="btn__label">Get in Touch</span></a>
+        <div class="sheet__body">
+          <h1 class="hero__title" id="heroTitle">
+            <span class="hero__line">Aleyya Innasya</span>
+            <span class="hero__line hero__line--italic">El Karima Wicaksono</span>
+          </h1>
+          <p class="hero__lede">Mathematics undergraduate at ITS, learning to make data accurate, organized, and useful.</p>
+          <p class="hero__links">
+            <a class="link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
+          </p>
         </div>
-        <div class="hero__links" data-intro>
-          <a class="link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a class="link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
+        <div class="sheet__foot">
+          <span class="scalebar">
+            <svg class="scalebar__bar" viewBox="0 0 160 8" aria-hidden="true" focusable="false">
+              <rect x="0.5" y="0.5" width="40" height="7" class="is-filled" />
+              <rect x="40.5" y="0.5" width="40" height="7" />
+              <rect x="80.5" y="0.5" width="79" height="7" class="is-filled" />
+            </svg>
+            <span class="scalebar__labels" aria-hidden="true"><span>0</span><span>50</span><span>100</span><span>200 M</span></span>
+          </span>
+          <span class="hero__cue">Scroll to land on site ↓</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="panel panel--wide" id="projects" aria-labelledby="projectsTitle">
+      <div class="sheet sheet--panel" data-reveal>
+        <div class="sheet__meta"><span>Sheet 01 · Projects</span><span>01 / 05</span></div>
+        <div class="sheet__body">
+          <div class="panel__head">
+            <h2 class="panel__title" id="projectsTitle">Things I've <em>built.</em></h2>
+            <div class="filters" role="group" aria-label="Filter projects">
+              <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" type="button" data-filter="apps" aria-pressed="false">Mobile &amp; Web Apps</button>
+              <button class="filter" type="button" data-filter="oop" aria-pressed="false">OOP &amp; Systems</button>
+            </div>
+          </div>
+          <p class="visually-hidden" id="filterStatus" aria-live="polite"></p>
+
+          <div class="projects">
+            <article class="project project--wide" data-cat="apps" data-tilt>
+              <div class="project__preview project__preview--phone" aria-hidden="true">
+                <div class="phone">
+                  <span class="phone__notch"></span>
+                  <img src="assets/hanzee-icon.png" alt="" class="phone__icon" width="320" height="320" loading="lazy" />
+                  <span class="phone__name">Hanzee</span>
+                </div>
+              </div>
+              <div class="project__body">
+                <div class="project__head">
+                  <span class="project__index">01</span>
+                  <h3 class="project__title">Hanzee</h3>
+                  <span class="project__tag">Flutter · Web &amp; Android</span>
+                </div>
+                <p class="project__desc">
+                  A Flutter app that teaches Mandarin to Indonesian and English-speaking
+                  beginners, from the first nǐ hǎo to HSK 5. Features a Hanzi Writing Lab
+                  that checks strokes, spaced-repetition flashcards, grammar cards,
+                  listening and pronunciation practice, and a garden that grows as you
+                  learn with Bao the panda and Kopi the bear.
+                </p>
+                <p class="project__links">
+                  <a class="link" href="https://aleyya06.github.io/Hanzee/" target="_blank" rel="noopener">Try the web version ↗</a>
+                  <a class="link" href="https://github.com/aleyya06/Hanzee/releases/latest/download/app-release.apk">Download for Android (APK, 67 MB)</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="project" data-cat="apps" data-tilt>
+              <div class="project__preview project__preview--browser" aria-hidden="true">
+                <div class="browser">
+                  <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">pawfox.web.id</span></span>
+                  <img src="assets/pawfox-logo.png" alt="" class="browser__logo" loading="lazy" />
+                </div>
+              </div>
+              <div class="project__body">
+                <div class="project__head">
+                  <span class="project__index">02</span>
+                  <h3 class="project__title">PawFox GO</h3>
+                  <span class="project__tag">Web App · Live</span>
+                </div>
+                <p class="project__desc">
+                  A web platform for personal-managed K-pop group orders from Thailand,
+                  South Korea, China, and Japan. Buyers can browse ongoing batches per
+                  country, convert GO rates to rupiah, track parcels from the warehouse
+                  to Indonesia, and check their invoices—complete with buyer reviews.
+                </p>
+                <p class="project__links">
+                  <a class="link" href="https://pawfox.web.id" target="_blank" rel="noopener">Visit PawFox GO ↗</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="project project--snake" data-cat="oop" data-tilt>
+              <div class="project__preview project__preview--snake" aria-hidden="true">
+                <div class="snake">
+                  <span class="snake__food"></span>
+                  <span class="snake__seg" style="--i:0"></span>
+                  <span class="snake__seg" style="--i:1"></span>
+                  <span class="snake__seg" style="--i:2"></span>
+                  <span class="snake__seg" style="--i:3"></span>
+                  <span class="snake__seg" style="--i:4"></span>
+                </div>
+              </div>
+              <div class="project__body">
+                <div class="project__head">
+                  <span class="project__index">03</span>
+                  <h3 class="project__title">Snake Game</h3>
+                  <span class="project__tag">Java · OOP</span>
+                </div>
+                <p class="project__desc">
+                  A desktop Snake game built as a team OOP project, split into five classes
+                  (<em>SnakeMain</em>, <em>MainMenuPanel</em>, <em>SnakePanel</em>,
+                  <em>GameOverPanel</em>, <em>ImageLoader</em>). Designed first with UML
+                  class diagrams, featuring keyboard controls and custom skin &amp; food
+                  customization.
+                </p>
+                <p class="project__links">
+                  <a class="link" href="projects/snake-game.html">View project deck ↗</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="project project--soon" data-cat="soon">
+              <div class="project__preview project__preview--soon" aria-hidden="true"><span>~</span></div>
+              <div class="project__body">
+                <div class="project__head">
+                  <span class="project__index">04</span>
+                  <h3 class="project__title">Data Analysis Projects</h3>
+                  <span class="project__tag">SQL · Python</span>
+                </div>
+                <p class="project__desc">
+                  A space reserved for my upcoming projects. As I continue
+                  learning SQL, Python, and data analysis — building on my
+                  Dicoding certifications — new work will be showcased here.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== About ===== -->
-    <section class="section about" id="about" data-tone="paper">
-      <svg class="rose rose--drift about__rose" data-rose="3" data-parallax="-0.08" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
-      <div class="container about__grid">
-        <h2 class="section__label" data-reveal><span class="section__num">01</span> — About</h2>
-          <div class="about__body about__body--wide">
-            <p class="about__lead" data-split="words">
+    <!-- ===== About & Education ===== -->
+    <section class="panel panel--left" id="about" aria-labelledby="aboutTitle">
+      <div class="sheet sheet--panel" data-reveal>
+        <div class="sheet__meta"><span>Sheet 02 · About &amp; Education</span><span>02 / 05</span></div>
+        <div class="sheet__body split">
+          <div class="split__col">
+            <span class="split__index">01</span>
+            <h2 class="panel__title panel__title--sm" id="aboutTitle">About</h2>
+            <p class="about__lead">
               I'm a Mathematics student at Sepuluh Nopember Institute of Technology
               (ITS), class of 2024, with a strong interest in data processing and
               analysis. I enjoy making sense of numbers: organizing them, checking
               them, and turning them into something people can act on.
             </p>
-            <p data-reveal>
+            <p class="about__more">
               Right now, I'm building my skills in SQL, Python, and data analysis
               one project at a time, backed by my Dicoding certifications in Data
               Science and SQL. I'm open to opportunities where I can learn and
               contribute.
             </p>
           </div>
-      </div>
-    </section>
-
-    <!-- ===== Experience ===== -->
-    <section class="section chapter chapter--night experience" id="experience" data-tone="night" data-under="paper" data-chapter>
-      <div class="container">
-        <div class="section__head">
-          <p class="section__label" data-reveal><span class="section__num">02</span> — Experience</p>
-          <h2 class="section__title" data-split="words">Where I've <em>contributed.</em></h2>
-        </div>
-
-        <div class="timeline" data-timeline>
-          <span class="timeline__track" aria-hidden="true"><span class="timeline__fill"></span></span>
-
-          <article class="timeline__item" data-reveal>
-            <span class="timeline__marker" aria-hidden="true"></span>
-            <div class="timeline__meta">
-              <span class="timeline__period">Oct 2025 – Nov 2025</span>
-              <h3 class="timeline__role">Event Staff</h3>
-              <p class="timeline__org">ITS Chess Tournament 2025</p>
-            </div>
-            <ul class="timeline__points">
-              <li>Coordinated event logistics and rundown, serving as Master of Ceremony for participants.</li>
-              <li>Collaborated with the organizing committee to ensure smooth event execution.</li>
-            </ul>
-          </article>
-
-          <article class="timeline__item" data-reveal>
-            <span class="timeline__marker" aria-hidden="true"></span>
-            <div class="timeline__meta">
-              <span class="timeline__period">Sep 2025</span>
-              <h3 class="timeline__role">Master of Ceremony</h3>
-              <p class="timeline__org">Open House, Mathematics Department ITS</p>
-            </div>
-            <ul class="timeline__points">
-              <li>Hosted and facilitated the department's open house event.</li>
-              <li>Coordinated with the event committee to ensure a smooth program flow.</li>
-            </ul>
-          </article>
-
-          <article class="timeline__item" data-reveal>
-            <span class="timeline__marker" aria-hidden="true"></span>
-            <div class="timeline__meta">
-              <span class="timeline__period">Jun 2025 – Aug 2025</span>
-              <h3 class="timeline__role">Finance Staff</h3>
-              <p class="timeline__org">Aksi Nirwasita 6.0 — FSAD ITS</p>
-            </div>
-            <ul class="timeline__points">
-              <li>Managed and organized financial data systematically using spreadsheets to ensure accuracy and accessibility.</li>
-              <li>Maintained high attention to detail in verifying records and generating accurate reports.</li>
-            </ul>
-          </article>
-
-          <article class="timeline__item" data-reveal>
-            <span class="timeline__marker" aria-hidden="true"></span>
-            <div class="timeline__meta">
-              <span class="timeline__period">Oct 2023 – Nov 2023</span>
-              <h3 class="timeline__role">Marketing</h3>
-              <p class="timeline__org">Cendolino — Car Free Day Surabaya</p>
-            </div>
-            <ul class="timeline__points">
-              <li>Interacted directly with customers and handled sales at Car Free Day.</li>
-              <li>Recorded daily sales figures and designed visual promo materials using Canva.</li>
-              <li>Reached sales targets through good customer service and deep product knowledge.</li>
-            </ul>
-          </article>
-
-          <article class="timeline__item" data-reveal>
-            <span class="timeline__marker" aria-hidden="true"></span>
-            <div class="timeline__meta">
-              <span class="timeline__period">Feb 2023 – Mar 2023</span>
-              <h3 class="timeline__role">Marketing</h3>
-              <p class="timeline__org">Browcup — SMA Muhammadiyah 2 Surabaya</p>
-            </div>
-            <ul class="timeline__points">
-              <li>Recorded daily and weekly sales and produced complete sales reports.</li>
-              <li>Designed promo materials using Canva and contributed to boosting chocolate brownie sales through effective marketing strategies.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Education ===== -->
-    <section class="section chapter education" id="education" data-tone="paper" data-under="night" data-chapter>
-      <svg class="rose rose--drift education__rose" data-rose="6/5" data-parallax="0.06" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
-      <div class="container">
-        <h2 class="section__label" data-reveal><span class="section__num">03</span> — Education</h2>
-        <div class="edu" data-reveal="left">
-          <div>
-            <h3 class="edu__school">Sepuluh Nopember Institute of Technology (ITS)</h3>
+          <div class="split__col" id="education">
+            <span class="split__index">02</span>
+            <h2 class="panel__title panel__title--sm">Education</h2>
+            <h3 class="edu__school">Institut Teknologi Sepuluh Nopember (ITS)</h3>
             <p class="edu__degree">Bachelor of Mathematics</p>
+            <p class="edu__role">Undergraduate Mathematics Student, focused on data organization, mathematical modeling, and software craftsmanship.</p>
+            <p class="edu__period">2024 – Present</p>
           </div>
-          <span class="edu__period">2024 – Present</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience & Skills ===== -->
+    <section class="panel panel--right" id="experience" aria-labelledby="experienceTitle">
+      <div class="sheet sheet--panel" data-reveal>
+        <div class="sheet__meta"><span>Sheet 03 · Experience &amp; Skills</span><span>03 / 05</span></div>
+        <div class="sheet__body">
+          <h2 class="panel__title" id="experienceTitle">Where I've <em>contributed.</em></h2>
+
+          <div class="accordion">
+            <div class="acc">
+              <h3 class="acc__head">
+                <button class="acc__btn" type="button" id="exp-1-btn" aria-expanded="true" aria-controls="exp-1">
+                  <span class="acc__period">Oct 2025 – Nov 2025</span>
+                  <span class="acc__title">Event Staff</span>
+                  <span class="acc__org">ITS Chess Tournament 2025</span>
+                  <span class="acc__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel is-open" id="exp-1" role="region" aria-labelledby="exp-1-btn">
+                <div class="acc__inner">
+                  <ul class="acc__points">
+                    <li>Coordinated event logistics and rundown, serving as Master of Ceremony for participants.</li>
+                    <li>Collaborated with the organizing committee to ensure smooth event execution.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc">
+              <h3 class="acc__head">
+                <button class="acc__btn" type="button" id="exp-2-btn" aria-expanded="false" aria-controls="exp-2">
+                  <span class="acc__period">Sep 2025</span>
+                  <span class="acc__title">Master of Ceremony</span>
+                  <span class="acc__org">Open House, Mathematics Department ITS</span>
+                  <span class="acc__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="exp-2" role="region" aria-labelledby="exp-2-btn">
+                <div class="acc__inner">
+                  <ul class="acc__points">
+                    <li>Hosted and facilitated the department's open house event.</li>
+                    <li>Coordinated with the event committee to ensure a smooth program flow.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc">
+              <h3 class="acc__head">
+                <button class="acc__btn" type="button" id="exp-3-btn" aria-expanded="false" aria-controls="exp-3">
+                  <span class="acc__period">Jun 2025 – Aug 2025</span>
+                  <span class="acc__title">Finance Staff</span>
+                  <span class="acc__org">Aksi Nirwasita 6.0 — FSAD ITS</span>
+                  <span class="acc__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="exp-3" role="region" aria-labelledby="exp-3-btn">
+                <div class="acc__inner">
+                  <ul class="acc__points">
+                    <li>Managed and organized financial data systematically using spreadsheets to ensure accuracy and accessibility.</li>
+                    <li>Maintained high attention to detail in verifying records and generating accurate reports.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc">
+              <h3 class="acc__head">
+                <button class="acc__btn" type="button" id="exp-4-btn" aria-expanded="false" aria-controls="exp-4">
+                  <span class="acc__period">Oct 2023 – Nov 2023</span>
+                  <span class="acc__title">Marketing</span>
+                  <span class="acc__org">Cendolino — Car Free Day Surabaya</span>
+                  <span class="acc__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="exp-4" role="region" aria-labelledby="exp-4-btn">
+                <div class="acc__inner">
+                  <ul class="acc__points">
+                    <li>Interacted directly with customers and handled sales at Car Free Day.</li>
+                    <li>Recorded daily sales figures and designed visual promo materials using Canva.</li>
+                    <li>Reached sales targets through good customer service and deep product knowledge.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc">
+              <h3 class="acc__head">
+                <button class="acc__btn" type="button" id="exp-5-btn" aria-expanded="false" aria-controls="exp-5">
+                  <span class="acc__period">Feb 2023 – Mar 2023</span>
+                  <span class="acc__title">Marketing</span>
+                  <span class="acc__org">Browcup — SMA Muhammadiyah 2 Surabaya</span>
+                  <span class="acc__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="exp-5" role="region" aria-labelledby="exp-5-btn">
+                <div class="acc__inner">
+                  <ul class="acc__points">
+                    <li>Recorded daily and weekly sales and produced complete sales reports.</li>
+                    <li>Designed promo materials using Canva and contributed to boosting chocolate brownie sales through effective marketing strategies.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills" id="skills">
+            <h2 class="panel__title panel__title--sm">Skills</h2>
+            <div class="accordion">
+              <div class="acc">
+                <h3 class="acc__head">
+                  <button class="acc__btn acc__btn--skill" type="button" id="sk-1-btn" aria-expanded="true" aria-controls="sk-1">
+                    <span class="acc__title">Data &amp; Mathematical Modeling</span>
+                    <span class="acc__icon" aria-hidden="true"></span>
+                  </button>
+                </h3>
+                <div class="acc__panel is-open" id="sk-1" role="region" aria-labelledby="sk-1-btn">
+                  <div class="acc__inner">
+                    <ul class="tags">
+                      <li>Data Analysis</li>
+                      <li>Mathematical Modeling</li>
+                      <li>SQL</li>
+                      <li>Python</li>
+                      <li>Spreadsheets</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc">
+                <h3 class="acc__head">
+                  <button class="acc__btn acc__btn--skill" type="button" id="sk-2-btn" aria-expanded="false" aria-controls="sk-2">
+                    <span class="acc__title">Web &amp; Mobile Development</span>
+                    <span class="acc__icon" aria-hidden="true"></span>
+                  </button>
+                </h3>
+                <div class="acc__panel" id="sk-2" role="region" aria-labelledby="sk-2-btn">
+                  <div class="acc__inner">
+                    <ul class="tags">
+                      <li>Flutter</li>
+                      <li>React</li>
+                      <li>Java</li>
+                      <li>Python</li>
+                      <li>SQL</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="acc">
+                <h3 class="acc__head">
+                  <button class="acc__btn acc__btn--skill" type="button" id="sk-3-btn" aria-expanded="false" aria-controls="sk-3">
+                    <span class="acc__title">UI/Visual Design</span>
+                    <span class="acc__icon" aria-hidden="true"></span>
+                  </button>
+                </h3>
+                <div class="acc__panel" id="sk-3" role="region" aria-labelledby="sk-3-btn">
+                  <div class="acc__inner">
+                    <ul class="tags">
+                      <li>UI Design</li>
+                      <li>Visual Design</li>
+                      <li>Canva</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Certifications & Awards ===== -->
-    <section class="section achievements" id="achievements" data-tone="blush">
-      <div class="container">
-        <p class="section__label" data-reveal><span class="section__num">04</span> — Certifications &amp; Awards</p>
+    <section class="panel panel--wide" id="achievements" aria-labelledby="certTitle">
+      <div class="sheet sheet--panel" data-reveal>
+        <div class="sheet__meta"><span>Sheet 04 · Certifications &amp; Awards</span><span>04 / 05</span></div>
+        <div class="sheet__body">
+          <h2 class="panel__title panel__title--sm" id="certTitle">Certifications</h2>
+          <div class="certs">
+            <figure class="cert">
+              <button class="cert__frame" type="button" aria-haspopup="dialog">
+                <img src="assets/certificates/cert-data-science.jpg" alt="Dicoding certificate — Belajar Dasar Data Science, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
+              </button>
+              <figcaption class="cert__body">
+                <span class="cert__name">Belajar Dasar Data Science</span>
+                <span class="cert__meta">Dicoding Indonesia · Jul 2026</span>
+                <a class="cert__verify link" href="https://www.dicoding.com/certificates/JMZVOK6LQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
+              </figcaption>
+            </figure>
 
-        <h2 class="subsection__title" data-split="words">Certifications</h2>
-        <div class="cert-grid" data-stagger>
-          <figure class="cert-card" data-reveal data-tilt>
-            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
-              <img src="assets/certificates/cert-data-science.jpg" alt="Dicoding certificate — Belajar Dasar Data Science, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </button>
-            <figcaption class="cert-card__body">
-              <span class="cert-card__name">Belajar Dasar Data Science</span>
-              <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/JMZVOK6LQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
-            </figcaption>
-          </figure>
+            <figure class="cert">
+              <button class="cert__frame" type="button" aria-haspopup="dialog">
+                <img src="assets/certificates/cert-sql.jpg" alt="Dicoding certificate — Belajar Dasar Structured Query Language (SQL), awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
+              </button>
+              <figcaption class="cert__body">
+                <span class="cert__name">Belajar Dasar Structured Query Language (SQL)</span>
+                <span class="cert__meta">Dicoding Indonesia · Jul 2026</span>
+                <a class="cert__verify link" href="https://www.dicoding.com/certificates/JMZVOK6JQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
+              </figcaption>
+            </figure>
 
-          <figure class="cert-card" data-reveal data-tilt>
-            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
-              <img src="assets/certificates/cert-sql.jpg" alt="Dicoding certificate — Belajar Dasar Structured Query Language (SQL), awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </button>
-            <figcaption class="cert-card__body">
-              <span class="cert-card__name">Belajar Dasar Structured Query Language (SQL)</span>
-              <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/JMZVOK6JQXN9" target="_blank" rel="noopener">Verify certificate ↗</a>
-            </figcaption>
-          </figure>
+            <figure class="cert">
+              <button class="cert__frame" type="button" aria-haspopup="dialog">
+                <img src="assets/certificates/cert-kiro.jpg" alt="Dicoding certificate — Spec-Driven Development dengan Kiro, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
+              </button>
+              <figcaption class="cert__body">
+                <span class="cert__name">Spec-Driven Development dengan Kiro</span>
+                <span class="cert__meta">Dicoding Indonesia · Jul 2026</span>
+                <a class="cert__verify link" href="https://www.dicoding.com/certificates/EYX4QW48WPDL" target="_blank" rel="noopener">Verify certificate ↗</a>
+              </figcaption>
+            </figure>
 
-          <figure class="cert-card" data-reveal data-tilt>
-            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
-              <img src="assets/certificates/cert-kiro.jpg" alt="Dicoding certificate — Spec-Driven Development dengan Kiro, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </button>
-            <figcaption class="cert-card__body">
-              <span class="cert-card__name">Spec-Driven Development dengan Kiro</span>
-              <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/EYX4QW48WPDL" target="_blank" rel="noopener">Verify certificate ↗</a>
-            </figcaption>
-          </figure>
-
-          <figure class="cert-card" data-reveal data-tilt>
-            <button class="cert-card__frame" type="button" aria-haspopup="dialog">
-              <img src="assets/certificates/cert-financial-literacy.jpg" alt="Dicoding certificate — Introduction to Financial Literacy, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
-            </button>
-            <figcaption class="cert-card__body">
-              <span class="cert-card__name">Introduction to Financial Literacy</span>
-              <span class="cert-card__meta">Dicoding Indonesia · Jul 2026</span>
-              <a class="cert-card__verify link" href="https://www.dicoding.com/certificates/6RPN7LJE5X2M" target="_blank" rel="noopener">Verify certificate ↗</a>
-            </figcaption>
-          </figure>
-        </div>
-
-        <h2 class="subsection__title" data-split="words">Awards</h2>
-        <div class="awards" data-stagger>
-          <div class="award" data-reveal>
-            <span class="award__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
-            <span class="award__meta">2023</span>
+            <figure class="cert">
+              <button class="cert__frame" type="button" aria-haspopup="dialog">
+                <img src="assets/certificates/cert-financial-literacy.jpg" alt="Dicoding certificate — Introduction to Financial Literacy, awarded to Aleyya Innasya El Karima Wicaksono" loading="lazy" />
+              </button>
+              <figcaption class="cert__body">
+                <span class="cert__name">Introduction to Financial Literacy</span>
+                <span class="cert__meta">Dicoding Indonesia · Jul 2026</span>
+                <a class="cert__verify link" href="https://www.dicoding.com/certificates/6RPN7LJE5X2M" target="_blank" rel="noopener">Verify certificate ↗</a>
+              </figcaption>
+            </figure>
           </div>
-          <div class="award" data-reveal>
-            <span class="award__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
-            <span class="award__meta">2022</span>
+
+          <h2 class="panel__title panel__title--sm">Awards</h2>
+          <div class="awards">
+            <div class="award">
+              <span class="award__name">Finalist — Physics National Science Olympiad (OSN), Surabaya City Level</span>
+              <span class="award__year">2023</span>
+            </div>
+            <div class="award">
+              <span class="award__name">Bronze Diploma — University of Surabaya Choir Festival, Mixed Youth Choir Category</span>
+              <span class="award__year">2022</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Projects ===== -->
-    <section class="section projects" id="projects" data-tone="paper">
-      <svg class="rose rose--drift projects__rose" data-rose="5/3" data-parallax="-0.06" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
-      <div class="container">
-        <div class="section__head">
-          <p class="section__label" data-reveal><span class="section__num">05</span> — Projects</p>
-          <h2 class="section__title" data-split="words">Things I've <em>built.</em></h2>
-        </div>
-
-        <div class="projects__grid">
-          <article class="project-card project-card--wide" data-reveal data-tilt>
-            <div class="project-card__thumb project-card__thumb--hanzee">
-              <img src="assets/hanzee-icon.png" alt="Hanzee logo: Kopi the bear and Bao the panda" class="project-card__logo project-card__logo--app" width="320" height="320" loading="lazy" />
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__head">
-                <h3 class="project-card__title">Hanzee</h3>
-                <span class="project-card__tag">Flutter · Web &amp; Android</span>
-              </div>
-              <p class="project-card__desc">
-                A Flutter app that teaches Mandarin to Indonesian and English-speaking
-                beginners, from the first nǐ hǎo to HSK 5. It has a Hanzi Writing Lab
-                that checks your strokes, spaced-repetition flashcards, grammar cards,
-                listening and pronunciation practice, and a garden that grows as you
-                learn, with Bao the panda and Kopi the bear along the way.
-              </p>
-              <div class="project-card__links">
-                <a class="project-card__link link" href="https://aleyya06.github.io/Hanzee/" target="_blank" rel="noopener">
-                  Try the web version ↗
-                </a>
-                <a class="project-card__link link" href="https://github.com/aleyya06/Hanzee/releases/latest/download/app-release.apk">
-                  Download for Android (APK, 67 MB)
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card project-card--feature" data-reveal data-tilt>
-            <div class="project-card__thumb project-card__thumb--snake" aria-hidden="true">
-              <div class="snake">
-                <span class="snake__food"></span>
-                <span class="snake__seg" style="--i:0"></span>
-                <span class="snake__seg" style="--i:1"></span>
-                <span class="snake__seg" style="--i:2"></span>
-                <span class="snake__seg" style="--i:3"></span>
-                <span class="snake__seg" style="--i:4"></span>
-              </div>
-              <span class="project-card__glyph">▸ ▸ ▸</span>
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__head">
-                <h3 class="project-card__title">Snake Game</h3>
-                <span class="project-card__tag">Java · OOP</span>
-              </div>
-              <p class="project-card__desc">
-                A desktop Snake game built as a team OOP project. The app is split into
-                five classes — <em>SnakeMain</em> (entry point), <em>MainMenuPanel</em>
-                (main menu plus skin &amp; food customization), <em>SnakePanel</em> (core
-                game logic: movement, collisions, and score), <em>GameOverPanel</em>, and
-                <em>ImageLoader</em> (loads PNG/JPG/GIF resources). Designed first with
-                UML class diagrams, with keyboard controls for every state of the game.
-              </p>
-              <a class="project-card__link link" href="projects/snake-game.html">
-                View project deck ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card project-card--pawfox" data-reveal data-tilt>
-            <div class="project-card__thumb project-card__thumb--pawfox">
-              <img src="assets/pawfox-logo.png" alt="PawFox GO logo" class="project-card__logo" loading="lazy" />
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__head">
-                <h3 class="project-card__title">PawFox GO</h3>
-                <span class="project-card__tag">Web App · Live</span>
-              </div>
-              <p class="project-card__desc">
-                A web platform for my personal-managed K-pop group orders from
-                Thailand, South Korea, China, and Japan. Buyers can browse
-                ongoing batches per country, convert GO rates to rupiah, track
-                parcels from the warehouse to Indonesia, and check their
-                invoices — complete with buyer reviews.
-              </p>
-              <a class="project-card__link link" href="https://pawfox.web.id" target="_blank" rel="noopener">
-                Visit PawFox GO ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card project-card--soon" data-reveal>
-            <div class="project-card__thumb project-card__thumb--soon" aria-hidden="true">
-              <span class="project-card__glyph">~</span>
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__head">
-                <h3 class="project-card__title">Data Analysis Projects</h3>
-                <span class="project-card__tag">SQL · Python</span>
-              </div>
-              <p class="project-card__desc">
-                A space reserved for my upcoming projects. As I continue
-                learning SQL, Python, and data analysis — building on my
-                Dicoding certifications — new work will be showcased here.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Skills ===== -->
-    <section class="section chapter chapter--plum skills" id="skills" data-tone="plum" data-under="paper" data-chapter>
-      <div class="container">
-        <p class="section__label" data-reveal><span class="section__num">06</span> — Skills</p>
-        <div class="skills__body">
-          <h2 class="subsection__title" data-split="words">Data &amp; Programming</h2>
-          <ul class="skill-tags" data-stagger>
-            <li data-reveal>SQL</li>
-            <li data-reveal>Python</li>
-            <li data-reveal>Java</li>
-            <li data-reveal>Data Analysis</li>
-          </ul>
         </div>
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
-    <section class="section chapter contact" id="contact" data-tone="night" data-under="plum" data-chapter>
-      <svg class="rose rose--contact" data-rose="5/3" data-float="0.7" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
-      <div class="container contact__inner">
-        <p class="section__label" data-reveal><span class="section__num">07</span> — Contact</p>
-        <h2 class="contact__title" data-split="chars">Let's <em>connect.</em></h2>
-        <div class="contact__actions" data-reveal>
-          <a class="btn btn--primary" href="mailto:aleyyainnasya@gmail.com" data-magnetic><span class="btn__label">Email Me</span></a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener" data-magnetic><span class="btn__label">LinkedIn ↗</span></a>
+    <section class="panel panel--left" id="contact" aria-labelledby="contactTitle">
+      <div class="sheet sheet--panel" data-reveal>
+        <div class="sheet__meta"><span>Sheet 05 · Contact</span><span>05 / 05</span></div>
+        <div class="sheet__body">
+          <h2 class="panel__title" id="contactTitle">Let's <em>connect.</em></h2>
+          <form class="inquiry" id="inquiry" novalidate>
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required />
+              <p class="field__error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required />
+              <p class="field__error" id="f-email-err"></p>
+            </div>
+            <div class="field field--wide">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" rows="4" maxlength="1500" required></textarea>
+              <p class="field__error" id="f-msg-err"></p>
+            </div>
+            <div class="inquiry__actions">
+              <button class="btn" type="submit">Send via email <span aria-hidden="true">→</span></button>
+              <p class="inquiry__note" id="inquiryNote" role="status">Opens your email app with the message ready to send.</p>
+            </div>
+          </form>
+          <p class="contact__links">
+            <a class="link" href="https://www.linkedin.com/in/aleyyainnasya/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="link" href="mailto:aleyyainnasya@gmail.com">aleyyainnasya@gmail.com</a>
+            <span>Surabaya, Indonesia</span>
+          </p>
         </div>
-        <p class="contact__meta" data-reveal>Surabaya, Indonesia</p>
+        <footer class="sheet__foot footer">
+          <span>© 2026 aleyya.my.id · Aleyya Innasya El Karima Wicaksono</span>
+          <a class="link" href="#hero">Back to top ↑</a>
+        </footer>
       </div>
     </section>
   </main>
-
-  <footer class="footer" data-tone="night">
-    <div class="container footer__inner">
-      <p>© 2026 Aleyya Innasya El Karima Wicaksono</p>
-      <a class="link footer__top" href="#hero">Back to top <span class="footer__arrow" aria-hidden="true">↑</span></a>
-    </div>
-  </footer>
 
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Certificate preview">
     <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close preview">&times;</button>
     <img class="lightbox__img" id="lightboxImg" src="" alt="" />
   </div>
 
-  <script src="js/main.js?v=13"></script>
+  <script src="js/main.js?v=20" defer></script>
+  <script type="module" src="js/scene.js?v=23"></script>
 </body>
 </html>

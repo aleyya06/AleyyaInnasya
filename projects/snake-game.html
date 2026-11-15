@@ -5,45 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snake Game — Project Deck | Aleyya Innasya</title>
   <meta name="description" content="Project presentation deck for Snake Game — a Java OOP desktop game by Aleyya Innasya." />
-  <meta name="theme-color" content="#FAF2EB" />
+  <meta name="theme-color" content="#FBF6F3" />
   <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,100,0;1,9..144,300..600,100,1&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=14" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=23" />
 </head>
-<body>
+<body class="page">
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__ring"></span></div>
-
-  <header class="nav" data-nav>
-    <div class="container nav__inner">
-      <a href="../index.html" class="nav__brand">Aleyya<span class="nav__dot">.</span></a>
-      <nav class="nav__links" id="navLinks" aria-label="Sections">
-        <a href="../index.html#about" style="--i:0">About</a>
-        <a href="../index.html#experience" style="--i:1">Experience</a>
-        <a href="../index.html#education" style="--i:2">Education</a>
-        <a href="../index.html#projects" style="--i:3">Projects</a>
-        <a href="../index.html#skills" style="--i:4">Skills</a>
-        <a href="../index.html#contact" class="nav__cta" style="--i:5">Contact</a>
-      </nav>
-      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
-        <span class="nav__toggle-label">Menu</span>
-        <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span></span>
-      </button>
-    </div>
-    <span class="nav__progress" aria-hidden="true"></span>
+  <header class="pills" data-nav>
+    <a class="pill pill--brand" href="../index.html">
+      <svg class="pill__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.50 12.00L22.30 12.90L21.72 13.71L20.78 14.35L19.56 14.75L18.12 14.85L16.55 14.62L14.94 14.06L13.40 13.17L12.00 12.00L10.83 10.60L9.94 9.06L9.38 7.45L9.15 5.88L9.25 4.44L9.65 3.22L10.29 2.28L11.10 1.70L12.00 1.50L12.90 1.70L13.71 2.28L14.35 3.22L14.75 4.44L14.85 5.88L14.62 7.45L14.06 9.06L13.17 10.60L12.00 12.00L10.60 13.17L9.06 14.06L7.45 14.62L5.88 14.85L4.44 14.75L3.22 14.35L2.28 13.71L1.70 12.90L1.50 12.00L1.70 11.10L2.28 10.29L3.22 9.65L4.44 9.25L5.88 9.15L7.45 9.38L9.06 9.94L10.60 10.83L12.00 12.00L13.17 13.40L14.06 14.94L14.62 16.55L14.85 18.12L14.75 19.56L14.35 20.78L13.71 21.72L12.90 22.30L12.00 22.50L11.10 22.30L10.29 21.72L9.65 20.78L9.25 19.56L9.15 18.12L9.37 16.55L9.94 14.94L10.83 13.40L12.00 12.00L13.40 10.83L14.94 9.94L16.55 9.37L18.12 9.15L19.56 9.25L20.78 9.65L21.72 10.29L22.30 11.10Z" /></svg>
+      <span class="pill__name">Aleyya.</span>
+      <span class="pill__meta">Mathematics · Data · Surabaya</span>
+    </a>
+    <nav class="pill pill--nav" id="navLinks" aria-label="Sections">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+    </nav>
+    <button class="pill pill--menu" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <a class="pill pill--cta" href="../index.html#contact">Get in touch <span class="pill__arrow" aria-hidden="true">→</span></a>
   </header>
 
   <main id="main">
-    <section class="project-hero" data-tone="paper">
-      <svg class="rose rose--draw project-hero__rose" data-rose="5/4" data-float="0.4" viewBox="-1.05 -1.05 2.1 2.1" aria-hidden="true" focusable="false"></svg>
-      <div class="container">
-        <a class="project-hero__back" href="../index.html#projects" data-intro><span class="project-hero__arrow" aria-hidden="true">←</span> Back to all projects</a>
-        <h1 class="project-hero__title" data-split="chars" data-on-load>Snake Game</h1>
-        <p class="project-hero__meta" data-intro>
+    <article class="sheet" data-reveal>
+      <div class="sheet__meta"><span>Sheet 01.3 · Snake Game</span><span>Java · OOP</span></div>
+      <div class="sheet__body">
+        <a class="page__back" href="../index.html#projects"><span aria-hidden="true">←</span> Back to all projects</a>
+        <h1 class="page__title">Snake Game</h1>
+        <p class="page__meta">
           A desktop Snake game built as a team OOP project (with Fatkhul Barri).
           The app is split into five classes — <em>SnakeMain</em> (entry point),
           <em>MainMenuPanel</em> (main menu plus skin &amp; food customization),
@@ -52,28 +48,20 @@
           resources). Designed first with UML class diagrams. The full deck is
           embedded below.
         </p>
-      </div>
-    </section>
-
-    <section class="deck" data-tone="paper">
-      <div class="container">
-        <div class="deck__frame" data-reveal>
+        <div class="deck">
           <embed src="../assets/snake-game-presentation.pdf" type="application/pdf" />
         </div>
         <p class="deck__fallback">
           Can't view the deck? <a class="link" href="../assets/snake-game-presentation.pdf" download>Download the PDF</a>
         </p>
       </div>
-    </section>
+      <footer class="sheet__foot footer">
+        <span>© 2026 Aleyya Innasya El Karima Wicaksono</span>
+        <a class="link" href="../index.html">Back to home ↑</a>
+      </footer>
+    </article>
   </main>
 
-  <footer class="footer" data-tone="night">
-    <div class="container footer__inner">
-      <p>© 2026 Aleyya Innasya El Karima Wicaksono</p>
-      <a class="link footer__top" href="../index.html">Back to home <span class="footer__arrow" aria-hidden="true">↑</span></a>
-    </div>
-  </footer>
-
-  <script src="../js/main.js?v=13"></script>
+  <script src="../js/main.js?v=20" defer></script>
 </body>
 </html>
