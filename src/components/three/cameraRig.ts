@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { SCULPTURE_AT } from "./campusLayout";
+import { SCULPTURE_AT } from "./beijingLayout";
 
 export const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 export const smoothstep = (a: number, b: number, v: number) => {
@@ -18,8 +18,8 @@ export const sceneState = {
   pointerY: 0,
 };
 
-// A curved descent: high over the south-west lake, swinging in toward the plaza.
-const descentPath = new THREE.CatmullRomCurve3(
+// A curved descent: high over the south-west district, swinging in up the axis toward the plaza.
+export const descentPath = new THREE.CatmullRomCurve3(
   [
     new THREE.Vector3(-60, 560, 340),
     new THREE.Vector3(-190, 360, 330),

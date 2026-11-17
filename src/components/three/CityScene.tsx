@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { onCoverChange, scrollState } from "../../lib/scrollProgress";
 import { isLowTier, useReducedMotion } from "../../hooks/useMotion";
-import { CampusMaquette } from "./CampusMaquette";
+import { BeijingMaquette } from "./BeijingMaquette";
 import { SculptureA } from "./SculptureA";
 import { SITE_TAG_AT, placeCamera, sceneState, smoothstep } from "./cameraRig";
 
@@ -50,6 +50,34 @@ function CameraRig({ reduced, siteTag }: { reduced: boolean; siteTag: RefObject<
     }
     tag.style.opacity = visible.toFixed(3);
     tag.style.transform = `translate(${((projected.x + 1) / 2) * size.width}px, ${((1 - projected.y) / 2) * size.height}px)`;
+  });
+  return null;
+}
+
+/** Steps the pixel ratio down (never back up) after two slow 1.5 s windows in a row, so dense screens
+ *  on integrated GPUs stay smooth. Skips the first seconds, when shaders are still compiling. */
+function AdaptiveResolution() {
+  const setDpr = useThree((s) => s.setDpr);
+  const dpr = useThree((s) => s.viewport.dpr);
+  const acc = useRef({ warmup: 3, time: 0, frames: 0, slow: 0 });
+  useFrame((_, delta) => {
+    const a = acc.current;
+    if (delta > 0.25) return; // resuming after a pause, not a slow frame
+    if (a.warmup > 0) {
+      a.warmup -= delta;
+      return;
+    }
+    a.time += delta;
+    a.frames++;
+    if (a.time < 1.5) return;
+    const fps = a.frames / a.time;
+    a.time = 0;
+    a.frames = 0;
+    a.slow = fps < 55 ? a.slow + 1 : 0;
+    if (a.slow >= 2 && dpr > 1.01) {
+      a.slow = 0;
+      setDpr(Math.max(1, dpr - 0.25));
+    }
   });
   return null;
 }
@@ -111,7 +139,7 @@ function Atmosphere({ lowTier }: { lowTier: boolean }) {
         ref={sun}
         castShadow={!lowTier}
         intensity={2.6}
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={[4096, 4096]}
         shadow-bias={-0.0004}
         shadow-normalBias={0.5}
         shadow-camera-near={10}
@@ -204,8 +232,9 @@ export default function CityScene({ siteTag, onSelectA }: CitySceneProps) {
         onCreated={() => root.classList.add("has-scene")}
       >
         <CameraRig reduced={reduced} siteTag={siteTag} />
+        {!lowTier && !reduced && <AdaptiveResolution />}
         <Atmosphere lowTier={lowTier} />
-        <CampusMaquette lowTier={lowTier} reduced={reduced} />
+        <BeijingMaquette lowTier={lowTier} reduced={reduced} />
         <SculptureA ref={aRef} reduced={reduced} lowTier={lowTier} />
         <AInteraction target={aRef} onSelect={onSelectA} />
       </Canvas>

@@ -26,8 +26,8 @@ export function HeroSheet() {
   return (
     <article className="sheet sheet--hero" ref={ref}>
       <div className="sheet__meta">
-        <span>Sheet 00 · Kampus ITS · 1:5000</span>
-        <span className="sheet__site">• Site — Dept. of Mathematics</span>
+        <span>Sheet 00 · Beijing Axis · 1:5000</span>
+        <span className="sheet__site">• Site — Central Plaza</span>
       </div>
       <div className="sheet__body">
         <h1 className="hero__title" id="heroTitle">

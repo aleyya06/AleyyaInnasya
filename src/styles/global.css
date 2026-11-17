@@ -1,5 +1,5 @@
 /* Aleyya Innasya, portfolio.
-   A 3D ITS campus flight opens the page; a solid cream editorial page then slides over it. */
+   A 3D flight over a Beijing-inspired city opens the page; a solid cream editorial page then slides over it. */
 
 :root {
   /* Brand */
@@ -312,7 +312,7 @@ em { font-style: italic; }
 .profile__links .link { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* Content: an opaque page that slides up over the canvas after the landing.
-   The fade above its top edge lets the campus dissolve into cream instead of cutting off. */
+   The fade above its top edge lets the city dissolve into cream instead of cutting off. */
 .content { position: relative; z-index: 10; background: var(--page); }
 .content::before {
   content: "";

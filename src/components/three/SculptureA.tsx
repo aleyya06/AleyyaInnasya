@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { SCULPTURE_AT } from "./campusLayout";
+import { SCULPTURE_AT } from "./beijingLayout";
 import { sceneState } from "./cameraRig";
 
 /** Outer "A" contour (legs, flat apex, crossbar notch) with a triangular counter cut out of it. */
